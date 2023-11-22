@@ -11,8 +11,12 @@
                 <form action="/edit/{{ $id }}" method="post" style="padding:40px;margin:40px">
                     @csrf
                     <label>توضیحات</label>
-                    <input style="width: 100%; border: 1px solid black; height: 200px;" type="textarea" name="description" value=""><br>
-                        <input type="text" name="user" value="" hidden=""><br>
+                    <label>
+                        <input style="width: 100%; border: 1px solid black; height: 200px;" type="textarea" name="description" value="">
+                    </label><br>
+                    <label>
+                        <input name="user" value="" hidden="">
+                    </label><br>
                         <label>درصد پیشرفت</label>
                         <select type="text" name="process" id="process">
                                 <option type="text" name="process" value="1">25%</option>
