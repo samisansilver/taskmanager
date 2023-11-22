@@ -18,6 +18,7 @@ class jobController extends Controller
            'description' => $request->description,
             'status' => 1,
             'user_id' => $request->user,
+            'process' => 0
         ]);
         return redirect('/selectuser');
     }
@@ -55,6 +56,21 @@ class jobController extends Controller
         $upjob = Job::findOrFail($id);
         $upjob->update([
             'status' => 2
+        ]);
+        return redirect('/selectuser');
+    }
+
+    public function editJob(Request $request, $id)
+    {
+        return view('edit', compact('id'));
+    }
+
+    public function submitEditJob(Request $request, $id)
+    {
+        $upjob = Job::findOrFail($id);
+        $upjob->update([
+            'description' => $request->description,
+            'process' => $request->process
         ]);
         return redirect('/selectuser');
     }

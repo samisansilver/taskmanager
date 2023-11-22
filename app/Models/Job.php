@@ -13,7 +13,8 @@ class Job extends Model
       'title',
       'description',
       'status',
-        'user_id'
+        'user_id',
+        'process'
     ];
 
     public function getUser()

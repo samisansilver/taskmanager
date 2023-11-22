@@ -36,6 +36,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/managerjobs', [\App\Http\Controllers\jobController::class, 'getAllJobs']);
     Route::post('/delete/{id}', [\App\Http\Controllers\jobController::class, 'deleteJob']);
     Route::post('/update/{id}', [\App\Http\Controllers\jobController::class, 'updateJob']);
+    Route::post('/edit-task/{id}', [\App\Http\Controllers\jobController::class, 'editJob']);
+    Route::post('/edit/{id}', [\App\Http\Controllers\jobController::class, 'submitEditJob']);
 
     Route::get('/export', [\App\Http\Controllers\jobController::class, 'excelExport'])->name('export');
     });

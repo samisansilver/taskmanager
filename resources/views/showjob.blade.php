@@ -26,6 +26,19 @@
                                     <td style="color: green; direction:rtl">{{ $getuserjob->title }}</td>
                                 @endif
                                 <td style="direction:rtl">{{ $getuserjob->description }}</td>
+                                <td style="direction:ltr">
+                                @if( $getuserjob->process == 0 )
+                                        <p style="background:green;color:white;font-size:15px;font-weight: bolder;width: 10%">0%</p>
+                                    @elseif($getuserjob->process == 1 )
+                                        <p style="background:green;color:white;font-size:20px;font-weight: bolder;width: 30%">25%</p>
+                                    @elseif($getuserjob->process == 2 )
+                                        <p style="background:green;color:white;font-size:20px;font-weight: bolder;width: 50%">50%</p>
+                                    @elseif($getuserjob->process == 3 )
+                                        <p style="background:green;color:white;font-size:20px;font-weight: bolder;width: 75%">75%</p>
+                                    @else
+                                        <p style="background:green;color:white;font-size:20px;font-weight: bolder;width: 100%">100%</p>
+                                @endif
+                                </td>
                                 <td>
                                     @if(\Illuminate\Support\Facades\Auth::user()->user_role == 1 )
                                     <form action="/delete/{{ $getuserjob->id }}" method="post">
@@ -37,7 +50,13 @@
                                 <td>
                                     <form action="/update/{{ $getuserjob->id }}" method="post">
                                         @csrf
-                                        <button style="background: yellow;" type="submit">Done</button>
+                                        <button style="background: darkgreen;color: white" type="submit">Done</button>
+                                    </form>
+                                </td>
+                                <td>
+                                    <form action="/edit-task/{{ $getuserjob->id }}" method="post">
+                                        @csrf
+                                        <button style="background: yellow;" type="submit">Edit</button>
                                     </form>
                                 </td>
                             </tr>
