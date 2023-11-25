@@ -62,6 +62,7 @@ class jobController extends Controller
 
     public function editJob(Request $request, $id)
     {
+        $myjob = Job::where('status', );
         return view('edit', compact('id'));
     }
 
