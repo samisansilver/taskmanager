@@ -62,7 +62,8 @@ class jobController extends Controller
 
     public function editJob(Request $request, $id)
     {
-        return view('edit', compact('id'));
+        $ourjob = Job::findOrFail($id);
+        return view('edit', compact('id', 'ourjob'));
     }
 
     public function submitEditJob(Request $request, $id)

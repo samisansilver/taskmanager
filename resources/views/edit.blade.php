@@ -12,7 +12,7 @@
                     @csrf
                     <label>توضیحات</label>
                     <label>
-                        <input style="width: 100%; border: 1px solid black; height: 200px;" type="textarea" name="description" value="">
+                        <input style="width: 100%; border: 1px solid black; height: 200px;" type="textarea" name="description" value="{{ $ourjob->description }}">
                     </label><br>
                     <label>
                         <input name="user" value="" hidden="">
