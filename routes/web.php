@@ -30,7 +30,7 @@ Route::middleware('auth')->group(function () {
     Route::post('/submitjob', [\App\Http\Controllers\jobController::class, 'createJob']);
     Route::get('/jobform', [\App\Http\Controllers\jobController::class, 'jobForm'])->name('jobform');
 
-    Route::post('/getjobs', [\App\Http\Controllers\jobController::class, 'getJob']);
+    Route::post('/getjobs', [\App\Http\Controllers\jobController::class, 'getJob'])->name('getjob');
     Route::get('/selectuser', [\App\Http\Controllers\jobController::class, 'selectUser'])->name('selectuser');
 
     Route::get('/managerjobs', [\App\Http\Controllers\jobController::class, 'getAllJobs']);

@@ -33,6 +33,7 @@
                     <table class="" style="width: 100%; text-align: right">
                         <thead>
                         <tr>
+                            <th>درصد پیشرفت</th>
                             <th>عنوان</th>
                             <th>ردیف</th>
                         </tr>
@@ -41,12 +42,27 @@
                         <h2 style="text-align: right;font-size: 30px;font-weight: bolder">{{ $users->name }}</h2>
                         @foreach($users->getJobs->take(15)->sortDesc() as $user)
                             <tbody>
+                            <tr>
+                            <td style="width: 40%">
+                            @if( $user->process == 0 )
+                                <p style="width: 5%; background: orange">0%</p>
+                            @elseif( $user->process == 1 )
+                                <p style="width: 25%; background: yellow">25%</p>
+                            @elseif( $user->process == 2 )
+                                <p style="width: 50%; background: greenyellow">50%</p>
+                            @elseif( $user->process == 2 )
+                                <p style="width: 75%; background: green">75%</p>
+                            @else( $user->process == 2 )
+                                <p style="width: 100%; background: darkgreen;color: white">100%</p>
+                            @endif
+                            </td>
                             @if($user->status == 1)
-                                <td style="color: red">{{ $user->title }}</td>
+                                <td style="color: red; width: 40%">{{ $user->title }}</td>
                             @else
-                                <td style="color: green">{{ $user->title }}</td>
+                                <td style="color: green; width: 10%">{{ $user->title }}</td>
                             @endif
                             <td>{{ $user->id }}</td>
+                            </tr>
                             @endforeach
                             </tbody>
                     </table>
@@ -55,6 +71,7 @@
                     <table class="" style="width: 100%; text-align: right">
                         <thead>
                         <tr>
+                            <th>درصد پیشرفت</th>
                             <th>عنوان</th>
                             <th>ردیف</th>
                         </tr>
@@ -63,12 +80,27 @@
                         <h2 style="text-align: right;font-size: 30px;font-weight: bolder">{{ $users->name }}</h2>
                         @foreach($users->getJobs->take(15)->sortDesc() as $user)
                             <tbody>
+                            <tr>
+                                <td style="width: 40%">
+                                    @if( $user->process == 0 )
+                                        <p style="width: 5%; background: orange">0%</p>
+                                    @elseif( $user->process == 1 )
+                                        <p style="width: 25%; background: yellow">25%</p>
+                                    @elseif( $user->process == 2 )
+                                        <p style="width: 50%; background: greenyellow">50%</p>
+                                    @elseif( $user->process == 2 )
+                                        <p style="width: 75%; background: green">75%</p>
+                                    @else( $user->process == 2 )
+                                        <p style="width: 100%; background: darkgreen;color: white">100%</p>
+                                    @endif
+                                </td>
                             @if($user->status == 1)
                                 <td style="color: red">{{ $user->title }}</td>
                             @else
                                 <td style="color: green">{{ $user->title }}</td>
                             @endif
                             <td>{{ $user->id }}</td>
+                            </tr>
                             @endforeach
                             </tbody>
                     </table>
@@ -77,6 +109,7 @@
                     <table class="" style="width: 100%; text-align: right">
                         <thead>
                         <tr>
+                            <th>درصد پیشرفت</th>
                             <th>عنوان</th>
                             <th>ردیف</th>
                         </tr>
@@ -85,12 +118,27 @@
                         <h2 style="text-align: right;font-size: 30px;font-weight: bolder">{{ $users->name }}</h2>
                         @foreach($users->getJobs->take(15)->sortDesc() as $user)
                             <tbody>
+                            <tr>
+                                <td style="width: 40%">
+                                    @if( $user->process == 0 )
+                                        <p style="width: 5%; background: orange">0%</p>
+                                    @elseif( $user->process == 1 )
+                                        <p style="width: 25%; background: yellow">25%</p>
+                                    @elseif( $user->process == 2 )
+                                        <p style="width: 50%; background: greenyellow">50%</p>
+                                    @elseif( $user->process == 2 )
+                                        <p style="width: 75%; background: green">75%</p>
+                                    @else( $user->process == 2 )
+                                        <p style="width: 100%; background: darkgreen;color: white">100%</p>
+                                    @endif
+                                </td>
                             @if($user->status == 1)
                                 <td style="color: red">{{ $user->title }}</td>
                             @else
                                 <td style="color: green">{{ $user->title }}</td>
                             @endif
                             <td>{{ $user->id }}</td>
+                            </tr>
                             @endforeach
                             </tbody>
                     </table>
@@ -99,6 +147,7 @@
                     <table class="" style="width: 100%; text-align: right">
                         <thead>
                         <tr>
+                            <th>درصد پیشرفت</th>
                             <th>عنوان</th>
                             <th>ردیف</th>
                         </tr>
@@ -108,6 +157,19 @@
                         @foreach($users->getJobs->take(15)->sortDesc() as $user)
                             <tbody>
                             <tr>
+                                <td style="width: 40%">
+                                    @if( $user->process == 0 )
+                                        <p style="width: 5%; background: orange">0%</p>
+                                    @elseif( $user->process == 1 )
+                                        <p style="width: 25%; background: yellow">25%</p>
+                                    @elseif( $user->process == 2 )
+                                        <p style="width: 50%; background: greenyellow">50%</p>
+                                    @elseif( $user->process == 2 )
+                                        <p style="width: 75%; background: green">75%</p>
+                                    @else( $user->process == 2 )
+                                        <p style="width: 100%; background: darkgreen;color: white">100%</p>
+                                    @endif
+                                </td>
                             @if($user->status == 1)
                                 <td style="color: red">{{ $user->title }}</td>
                             @else
@@ -125,6 +187,7 @@
                     <table class="" style="width: 100%; text-align: right">
                         <thead>
                         <tr>
+                            <th>درصد پیشرفت</th>
                             <th>عنوان</th>
                             <th>ردیف</th>
                         </tr>
@@ -133,12 +196,27 @@
                         <h2 style="text-align: right;font-size: 30px;font-weight: bolder">{{ $users->name }}</h2>
                         @foreach($users->getJobs->take(15)->sortDesc() as $user)
                             <tbody>
+                            <tr>
+                                <td style="width: 40%">
+                                    @if( $user->process == 0 )
+                                        <p style="width: 5%; background: orange">0%</p>
+                                    @elseif( $user->process == 1 )
+                                        <p style="width: 25%; background: yellow">25%</p>
+                                    @elseif( $user->process == 2 )
+                                        <p style="width: 50%; background: greenyellow">50%</p>
+                                    @elseif( $user->process == 2 )
+                                        <p style="width: 75%; background: green">75%</p>
+                                    @else( $user->process == 2 )
+                                        <p style="width: 100%; background: darkgreen;color: white">100%</p>
+                                    @endif
+                                </td>
                             @if($user->status == 1)
                                 <td style="color: red">{{ $user->title }}</td>
                             @else
                                 <td style="color: green">{{ $user->title }}</td>
                             @endif
                             <td>{{ $user->id }}</td>
+                            </tr>
                             @endforeach
                             </tbody>
                     </table>
@@ -147,6 +225,7 @@
                     <table class="" style="width: 100%; text-align: right">
                         <thead>
                         <tr>
+                            <th>درصد پیشرفت</th>
                             <th>عنوان</th>
                             <th>ردیف</th>
                         </tr>
@@ -155,12 +234,27 @@
                         <h2 style="text-align: right;font-size: 30px;font-weight: bolder">{{ $users->name }}</h2>
                         @foreach($users->getJobs->take(15)->sortDesc() as $user)
                             <tbody>
+                            <tr>
+                                <td style="width: 40%">
+                                    @if( $user->process == 0 )
+                                        <p style="width: 5%; background: orange">0%</p>
+                                    @elseif( $user->process == 1 )
+                                        <p style="width: 25%; background: yellow">25%</p>
+                                    @elseif( $user->process == 2 )
+                                        <p style="width: 50%; background: greenyellow">50%</p>
+                                    @elseif( $user->process == 2 )
+                                        <p style="width: 75%; background: green">75%</p>
+                                    @else( $user->process == 2 )
+                                        <p style="width: 100%; background: darkgreen;color: white">100%</p>
+                                    @endif
+                                </td>
                             @if($user->status == 1)
                                 <td style="color: red">{{ $user->title }}</td>
                             @else
                                 <td style="color: green">{{ $user->title }}</td>
                             @endif
                             <td>{{ $user->id }}</td>
+                            </tr>
                             @endforeach
                             </tbody>
                     </table>
@@ -169,6 +263,7 @@
                     <table class="" style="width: 100%; text-align: right">
                         <thead>
                         <tr>
+                            <th>درصد پیشرفت</th>
                             <th>عنوان</th>
                             <th>ردیف</th>
                         </tr>
@@ -177,12 +272,27 @@
                         <h2 style="text-align: right;font-size: 30px;font-weight: bolder">{{ $users->name }}</h2>
                         @foreach($users->getJobs->take(15)->sortDesc() as $user)
                             <tbody>
+                            <tr>
+                                <td style="width: 40%">
+                                    @if( $user->process == 0 )
+                                        <p style="width: 5%; background: orange">0%</p>
+                                    @elseif( $user->process == 1 )
+                                        <p style="width: 25%; background: yellow">25%</p>
+                                    @elseif( $user->process == 2 )
+                                        <p style="width: 50%; background: greenyellow">50%</p>
+                                    @elseif( $user->process == 2 )
+                                        <p style="width: 75%; background: green">75%</p>
+                                    @else( $user->process == 2 )
+                                        <p style="width: 100%; background: darkgreen;color: white">100%</p>
+                                    @endif
+                                </td>
                             @if($user->status == 1)
                                 <td style="color: red">{{ $user->title }}</td>
                             @else
                                 <td style="color: green">{{ $user->title }}</td>
                             @endif
                             <td>{{ $user->id }}</td>
+                            </tr>
                             @endforeach
                             </tbody>
                     </table>
@@ -191,6 +301,7 @@
                     <table class="" style="width: 100%; text-align: right">
                         <thead>
                         <tr>
+                            <th>درصد پیشرفت</th>
                             <th>عنوان</th>
                             <th>ردیف</th>
                         </tr>
@@ -200,6 +311,19 @@
                         @foreach($users->getJobs->take(15)->sortDesc() as $user)
                             <tbody>
                             <tr>
+                                <td style="width: 40%">
+                                    @if( $user->process == 0 )
+                                        <p style="width: 5%; background: orange">0%</p>
+                                    @elseif( $user->process == 1 )
+                                        <p style="width: 25%; background: yellow">25%</p>
+                                    @elseif( $user->process == 2 )
+                                        <p style="width: 50%; background: greenyellow">50%</p>
+                                    @elseif( $user->process == 2 )
+                                        <p style="width: 75%; background: green">75%</p>
+                                    @else( $user->process == 2 )
+                                        <p style="width: 100%; background: darkgreen;color: white">100%</p>
+                                    @endif
+                                </td>
                             @if($user->status == 1)
                                 <td style="color: red">{{ $user->title }}</td>
                             @else
@@ -219,6 +343,7 @@
                         <table class="" style="width: 100%; text-align: right">
                             <thead>
                             <tr>
+                                <th>درصد پیشرفت</th>
                                 <th>عنوان</th>
                                 <th>ردیف</th>
                             </tr>
@@ -227,12 +352,27 @@
                             <h2 style="text-align: right;font-size: 30px;font-weight: bolder">{{ $users->name }}</h2>
                             @foreach($users->getJobs->take(15)->sortDesc() as $user)
                                 <tbody>
+                                <tr>
+                                    <td style="width: 40%">
+                                        @if( $user->process == 0 )
+                                            <p style="width: 5%; background: orange">0%</p>
+                                        @elseif( $user->process == 1 )
+                                            <p style="width: 25%; background: yellow">25%</p>
+                                        @elseif( $user->process == 2 )
+                                            <p style="width: 50%; background: greenyellow">50%</p>
+                                        @elseif( $user->process == 2 )
+                                            <p style="width: 75%; background: green">75%</p>
+                                        @else( $user->process == 2 )
+                                            <p style="width: 100%; background: darkgreen;color: white">100%</p>
+                                        @endif
+                                    </td>
                                 @if($user->status == 1)
                                     <td style="color: red">{{ $user->title }}</td>
                                 @else
                                     <td style="color: green">{{ $user->title }}</td>
                                 @endif
                                 <td>{{ $user->id }}</td>
+                                </tr>
                                 @endforeach
                                 </tbody>
                         </table>
@@ -241,6 +381,7 @@
                         <table class="" style="width: 100%; text-align: right">
                             <thead>
                             <tr>
+                                <th>درصد پیشرفت</th>
                                 <th>عنوان</th>
                                 <th>ردیف</th>
                             </tr>
@@ -249,21 +390,36 @@
                             <h2 style="text-align: right;font-size: 30px;font-weight: bolder">{{ $users->name }}</h2>
                             @foreach($users->getJobs->take(15)->sortDesc() as $user)
                                 <tbody>
+                                <tr>
+                                    <td style="width: 40%">
+                                        @if( $user->process == 0 )
+                                            <p style="width: 5%; background: orange">0%</p>
+                                        @elseif( $user->process == 1 )
+                                            <p style="width: 25%; background: yellow">25%</p>
+                                        @elseif( $user->process == 2 )
+                                            <p style="width: 50%; background: greenyellow">50%</p>
+                                        @elseif( $user->process == 2 )
+                                            <p style="width: 75%; background: green">75%</p>
+                                        @else( $user->process == 2 )
+                                            <p style="width: 100%; background: darkgreen;color: white">100%</p>
+                                        @endif
+                                    </td>
                                 @if($user->status == 1)
                                     <td style="color: red">{{ $user->title }}</td>
                                 @else
                                     <td style="color: green">{{ $user->title }}</td>
                                 @endif
                                 <td>{{ $user->id }}</td>
+                                </tr>
                                 @endforeach
                                 </tbody>
                         </table>
                     </div>
                     <div class="col p-6">
-                        
+
                     </div>
                     <div class="p-6 col">
-                    
+
                     </div>
                 </div>
             </div>
@@ -272,8 +428,10 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
-{{--                    این قسمت کاملاً درست است و برای نمایش کامل جاب هاست--}}
-                        <table style="width: 100%; text-align: right">
+                    <button type="submit"><a style="background: green; color: white; padding: 10px; border-radius: 10px" href="{{ route('export') }}">export</a></button>
+                    <br><br>
+                    {{--                    این قسمت کاملاً درست است و برای نمایش کامل جاب هاست--}}
+                    <table style="width: 100%; text-align: right">
                             <thead>
                             <tr>
                                 <th>توضیحات</th>
@@ -297,7 +455,6 @@
                                 </tr>
                                     @endforeach
                             </tbody>
-                            <button type="submit"><a style="background: green; color: white; padding: 10px; border-radius: 10px" href="{{ route('export') }}">export</a></button>
                         </table>
                         {{ $getjobs }}
                     {{--                    این قسمت کاملاً درست است و برای نمایش کامل جاب هاست--}}
