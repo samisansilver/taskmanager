@@ -17,8 +17,7 @@
                     <label>
                         <input name="user" value="" hidden="">
                     </label><br>
-                        <label>درصد پیشرفت</label>
-                        <select type="text" name="process" id="process">
+                    <label for="process">درصد پیشرفت</label><select type="text" name="process" id="process">
                                 <option type="text" name="process" value="1">25%</option>
                                 <option type="text" name="process" value="2">50%</option>
                                 <option type="text" name="process" value="3">75%</option>
