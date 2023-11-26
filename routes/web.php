@@ -41,11 +41,13 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/export', [\App\Http\Controllers\jobController::class, 'excelExport'])->name('export');
     });
-    Route::get('del', function (){
-        /*$sams = \App\Models\Job::all();
+    Route::get('/del', function (){
+        $sams = \App\Models\Job::all();
         foreach ($sams as $sam){
-        $sam->delete();
+        $sam->update([
+            'archive' => 'null'
+        ]);
         }
-        return 'saman delete';*/
+        return 'archive updated';
 });
 require __DIR__.'/auth.php';
