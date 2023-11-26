@@ -28,15 +28,15 @@
                                 <td style="direction:rtl">{{ $getuserjob->description }}</td>
                                 <td style="direction:ltr">
                                 @if( $getuserjob->process == 0 )
-                                        <p style="background:green;color:white;font-size:15px;font-weight: bolder;width: 10%">0%</p>
+                                        <p style="background:orange;color:white;font-size:15px;font-weight: bolder;width: 10%">0%</p>
                                     @elseif($getuserjob->process == 1 )
-                                        <p style="background:green;color:white;font-size:20px;font-weight: bolder;width: 30%">25%</p>
+                                        <p style="background:yellow;color:black;font-size:20px;font-weight: bolder;width: 30%">25%</p>
                                     @elseif($getuserjob->process == 2 )
-                                        <p style="background:green;color:white;font-size:20px;font-weight: bolder;width: 50%">50%</p>
+                                        <p style="background:greenyellow;color:black;font-size:20px;font-weight: bolder;width: 50%">50%</p>
                                     @elseif($getuserjob->process == 3 )
                                         <p style="background:green;color:white;font-size:20px;font-weight: bolder;width: 75%">75%</p>
                                     @else
-                                        <p style="background:green;color:white;font-size:20px;font-weight: bolder;width: 100%">100%</p>
+                                        <p style="background:darkgreen;color:white;font-size:20px;font-weight: bolder;width: 100%">100%</p>
                                 @endif
                                 </td>
                                 <td>
