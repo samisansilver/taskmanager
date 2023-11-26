@@ -21,6 +21,9 @@
                     <x-nav-link :href="route('selectuser')" :active="request()->routeIs('selectuser')">
                         {{ __('Tasks') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('archive')" :active="request()->routeIs('archive')">
+                        {{ __('Archive') }}
+                    </x-nav-link>
                 </div>
             </div>
 
@@ -81,6 +84,9 @@
             </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('selectuser')">
                 {{ __('Tasks') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('archive')">
+                {{ __('archive') }}
             </x-responsive-nav-link>
         </div>
 

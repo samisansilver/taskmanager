@@ -18,6 +18,7 @@
                         </thead>
                         <tbody>
                         @foreach($getuserjobs as $getuserjob)
+                            @if( $getuserjob->archive == null)
                             <tr>
                                 <td>{{ $getuserjob->id }}</td>
                                 @if($getuserjob->status == 1)
@@ -60,6 +61,7 @@
                                     </form>
                                 </td>
                             </tr>
+                            @endif
                         @endforeach
                         </tbody>
                     </table>

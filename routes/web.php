@@ -38,16 +38,18 @@ Route::middleware('auth')->group(function () {
     Route::post('/update/{id}', [\App\Http\Controllers\jobController::class, 'updateJob']);
     Route::post('/edit-task/{id}', [\App\Http\Controllers\jobController::class, 'editJob']);
     Route::post('/edit/{id}', [\App\Http\Controllers\jobController::class, 'submitEditJob']);
+    Route::get('/archive', [\App\Http\Controllers\jobController::class, 'archiveTasks'])->name('archive')->middleware('checkAdmin');
+    Route::post('/unarchive/{id}', [\App\Http\Controllers\jobController::class, 'unArchive']);
 
     Route::get('/export', [\App\Http\Controllers\jobController::class, 'excelExport'])->name('export');
     });
     Route::get('/del', function (){
-        $sams = \App\Models\Job::all();
+        /*$sams = \App\Models\Job::all();
         foreach ($sams as $sam){
         $sam->update([
             'archive' => 'null'
         ]);
         }
-        return 'archive updated';
+        return 'archive updated';*/
 });
 require __DIR__.'/auth.php';

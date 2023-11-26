@@ -47,8 +47,10 @@ class jobController extends Controller
 
     public function deleteJob(Request $request, $id)
     {
-        $deljob = Job::findOrFail($id);
-        $deljob->delete();
+        $archivejob = Job::findOrFail($id);
+        $archivejob->update([
+            'archive' => 1
+        ]);
         return redirect('/selectuser');
     }
     public function updateJob(Request $request, $id)
@@ -72,6 +74,20 @@ class jobController extends Controller
         $upjob->update([
             'description' => $request->description,
             'process' => $request->process
+        ]);
+        return redirect('/selectuser');
+    }
+
+    public function archiveTasks()
+    {
+        return view('archive');
+    }
+
+    public function unArchive(Request $request, $id)
+    {
+        $upjob = Job::findOrFail($id);
+        $upjob->update([
+            'archive' => null
         ]);
         return redirect('/selectuser');
     }

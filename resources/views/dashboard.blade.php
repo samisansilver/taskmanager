@@ -42,6 +42,7 @@
                         <h2 style="text-align: right;font-size: 30px;font-weight: bolder">{{ $users->name }}</h2>
                         @foreach($users->getJobs->take(15)->sortDesc() as $user)
                             <tbody>
+                            @if( $user->archive == null)
                             <tr>
                             <td style="width: 40%">
                             @if( $user->process == 0 )
@@ -63,6 +64,7 @@
                             @endif
                             <td>{{ $user->id }}</td>
                             </tr>
+                            @endif
                             @endforeach
                             </tbody>
                     </table>
@@ -80,6 +82,7 @@
                         <h2 style="text-align: right;font-size: 30px;font-weight: bolder">{{ $users->name }}</h2>
                         @foreach($users->getJobs->take(15)->sortDesc() as $user)
                             <tbody>
+                            @if( $user->archive == null)
                             <tr>
                                 <td style="width: 40%">
                                     @if( $user->process == 0 )
@@ -101,6 +104,7 @@
                             @endif
                             <td>{{ $user->id }}</td>
                             </tr>
+                            @endif
                             @endforeach
                             </tbody>
                     </table>
@@ -118,6 +122,7 @@
                         <h2 style="text-align: right;font-size: 30px;font-weight: bolder">{{ $users->name }}</h2>
                         @foreach($users->getJobs->take(15)->sortDesc() as $user)
                             <tbody>
+                            @if( $user->archive == null)
                             <tr>
                                 <td style="width: 40%">
                                     @if( $user->process == 0 )
@@ -139,6 +144,7 @@
                             @endif
                             <td>{{ $user->id }}</td>
                             </tr>
+                            @endif
                             @endforeach
                             </tbody>
                     </table>
@@ -156,6 +162,7 @@
                         <h2 style="text-align: right;font-size: 30px;font-weight: bolder">{{ $users->name }}</h2>
                         @foreach($users->getJobs->take(15)->sortDesc() as $user)
                             <tbody>
+                            @if( $user->archive == null)
                             <tr>
                                 <td style="width: 40%">
                                     @if( $user->process == 0 )
@@ -177,6 +184,7 @@
                             @endif
                             <td>{{ $user->id }}</td>
                             </tr>
+                            @endif
                             @endforeach
                             </tbody>
                     </table>
@@ -196,6 +204,7 @@
                         <h2 style="text-align: right;font-size: 30px;font-weight: bolder">{{ $users->name }}</h2>
                         @foreach($users->getJobs->take(15)->sortDesc() as $user)
                             <tbody>
+                            @if( $user->archive == null)
                             <tr>
                                 <td style="width: 40%">
                                     @if( $user->process == 0 )
@@ -217,6 +226,7 @@
                             @endif
                             <td>{{ $user->id }}</td>
                             </tr>
+                            @endif
                             @endforeach
                             </tbody>
                     </table>
@@ -234,6 +244,7 @@
                         <h2 style="text-align: right;font-size: 30px;font-weight: bolder">{{ $users->name }}</h2>
                         @foreach($users->getJobs->take(15)->sortDesc() as $user)
                             <tbody>
+                            @if( $user->archive == null)
                             <tr>
                                 <td style="width: 40%">
                                     @if( $user->process == 0 )
@@ -255,6 +266,7 @@
                             @endif
                             <td>{{ $user->id }}</td>
                             </tr>
+                            @endif
                             @endforeach
                             </tbody>
                     </table>
@@ -272,6 +284,7 @@
                         <h2 style="text-align: right;font-size: 30px;font-weight: bolder">{{ $users->name }}</h2>
                         @foreach($users->getJobs->take(15)->sortDesc() as $user)
                             <tbody>
+                            @if( $user->archive == null)
                             <tr>
                                 <td style="width: 40%">
                                     @if( $user->process == 0 )
@@ -293,6 +306,7 @@
                             @endif
                             <td>{{ $user->id }}</td>
                             </tr>
+                            @endif
                             @endforeach
                             </tbody>
                     </table>
@@ -310,6 +324,7 @@
                         <h2 style="text-align: right;font-size: 30px;font-weight: bolder">{{ $users->name }}</h2>
                         @foreach($users->getJobs->take(15)->sortDesc() as $user)
                             <tbody>
+                            @if( $user->archive == null)
                             <tr>
                                 <td style="width: 40%">
                                     @if( $user->process == 0 )
@@ -331,6 +346,7 @@
                             @endif
                             <td>{{ $user->id }}</td>
                             </tr>
+                            @endif
                             @endforeach
                             </tbody>
                     </table>
@@ -352,6 +368,7 @@
                             <h2 style="text-align: right;font-size: 30px;font-weight: bolder">{{ $users->name }}</h2>
                             @foreach($users->getJobs->take(15)->sortDesc() as $user)
                                 <tbody>
+                                @if( $user->archive == null)
                                 <tr>
                                     <td style="width: 40%">
                                         @if( $user->process == 0 )
@@ -373,6 +390,7 @@
                                 @endif
                                 <td>{{ $user->id }}</td>
                                 </tr>
+                                @endif
                                 @endforeach
                                 </tbody>
                         </table>
@@ -390,6 +408,7 @@
                             <h2 style="text-align: right;font-size: 30px;font-weight: bolder">{{ $users->name }}</h2>
                             @foreach($users->getJobs->take(15)->sortDesc() as $user)
                                 <tbody>
+                                @if( $user->archive == null)
                                 <tr>
                                     <td style="width: 40%">
                                         @if( $user->process == 0 )
@@ -411,6 +430,7 @@
                                 @endif
                                 <td>{{ $user->id }}</td>
                                 </tr>
+                                @endif
                                 @endforeach
                                 </tbody>
                         </table>
