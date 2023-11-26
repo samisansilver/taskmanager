@@ -45,7 +45,7 @@
                                         @if(\Illuminate\Support\Facades\Auth::user()->user_role == 1 )
                                             <form action="/unarchive/{{ $archtask->id }}" method="post">
                                                 @csrf
-                                                <button style="background: blue;color: white" type="submit">onArchive</button>
+                                                <button style="background: blue;color: white" type="submit">unArchive</button>
                                             </form>
                                     </td>
                                     @endif
