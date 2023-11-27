@@ -40,6 +40,7 @@ Route::middleware('auth')->group(function () {
     Route::post('/edit/{id}', [\App\Http\Controllers\jobController::class, 'submitEditJob']);
     Route::get('/archive', [\App\Http\Controllers\jobController::class, 'archiveTasks'])->name('archive')->middleware('checkAdmin');
     Route::post('/unarchive/{id}', [\App\Http\Controllers\jobController::class, 'unArchive']);
+    Route::post('/force/{id}', [\App\Http\Controllers\jobController::class, 'markforce']);
 
     Route::get('/export', [\App\Http\Controllers\jobController::class, 'excelExport'])->name('export');
     });

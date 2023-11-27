@@ -92,6 +92,21 @@ class jobController extends Controller
         return redirect('/selectuser');
     }
 
+    public function markForce(Request $request, $id)
+    {
+        $forcejob = Job::findOrFail($id);
+        if ($request->force == 1) {
+            $forcejob->update([
+                'force' => 1
+            ]);
+        }else{
+            $forcejob->update([
+                'force' => 0
+            ]);
+        }
+        return redirect('/selectuser');
+    }
+
     public function excelExport()
     {
         if (Auth::user()->user_role != 1) {

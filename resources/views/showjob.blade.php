@@ -11,15 +11,36 @@
                     <table style="width: 100%">
                         <thead>
                         <tr>
+                            <th></th>
                             <th>id</th>
                             <th>title</th>
                             <th>description</th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
                         </tr>
                         </thead>
                         <tbody>
                         @foreach($getuserjobs as $getuserjob)
                             @if( $getuserjob->archive == null)
                             <tr>
+                                <td>
+                                    <form action="/force/{{ $getuserjob->id }}" method="post">
+                                        @if($getuserjob->force == 0)
+                                            <input name="force" value="1" hidden="">
+                                        @else
+                                            <input name="force" value="0" hidden="">
+                                        @endif
+                                    @csrf
+                                    <button style="" type="submit">
+                                        @if( $getuserjob->force == 0 )
+                                            <img style="width: 30px" src="/img/star-white.png">
+                                        @else
+                                            <img style="width: 55px" src="/img/yellow-star.webp" alt="">
+                                        @endif
+                                    </button>
+                                    </form>
+                                </td>
                                 <td>{{ $getuserjob->id }}</td>
                                 @if($getuserjob->status == 1)
                                     <td style="color: red; direction:rtl">{{ $getuserjob->title }}</td>
