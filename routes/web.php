@@ -41,16 +41,25 @@ Route::middleware('auth')->group(function () {
     Route::get('/archive', [\App\Http\Controllers\jobController::class, 'archiveTasks'])->name('archive')->middleware('checkAdmin');
     Route::post('/unarchive/{id}', [\App\Http\Controllers\jobController::class, 'unArchive']);
     Route::post('/force/{id}', [\App\Http\Controllers\jobController::class, 'markforce']);
-
     Route::get('/export', [\App\Http\Controllers\jobController::class, 'excelExport'])->name('export');
     });
-    Route::get('/del', function (){
-        /*$sams = \App\Models\Job::all();
-        foreach ($sams as $sam){
-        $sam->update([
-            'archive' => 'null'
-        ]);
-        }
-        return 'archive updated';*/
+
+Route::prefix('/supply')->group( function (){
+    Route::get('/newcompany', [\App\Http\Controllers\supplyController::class, 'newCompany'])->name('newsupplier');
+    Route::post('/createcompany', [\App\Http\Controllers\supplyController::class, 'createCompany']);
+    Route::get('/supplier-list', [\App\Http\Controllers\supplyController::class, 'supplierList'])->name('supplierlist');
+    Route::post('/getsupplier', [\App\Http\Controllers\supplyController::class, 'getSupplier'])->name('getsupplier');
+    Route::post('/{id}', [\App\Http\Controllers\supplyController::class, 'showData'])->name('showcompany');
+//    Route::post('/supplier', [\App\Http\Controllers\supplyController::class, 'showData'])->name('showcompany');
 });
+
+    Route::get('/del', function (){
+      $sam = \Illuminate\Support\Facades\Auth::user()->getCompanies;
+      return $sam->where('chap' , 1);
+});
+
+    Route::get('/test', function (){
+        return view('test');
+    });
+
 require __DIR__.'/auth.php';

@@ -24,6 +24,12 @@
                     <x-nav-link :href="route('archive')" :active="request()->routeIs('archive')">
                         {{ __('Archive') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('newsupplier')" :active="request()->routeIs('newsupplier')">
+                        {{ __('New Supplier') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('supplierlist')" :active="request()->routeIs('supplierlist')">
+                        {{ __('Supplier List') }}
+                    </x-nav-link>
                 </div>
             </div>
 
@@ -87,6 +93,12 @@
             </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('archive')">
                 {{ __('archive') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('newsupplier')">
+                {{ __('New Supplier') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('supplierlist')">
+                {{ __(' Supplier List') }}
             </x-responsive-nav-link>
         </div>
 
