@@ -31,7 +31,7 @@
                                 <td>{{ $supplier->site }}</td>
                             </tr>
                                 <td style="width: 5%">ایمیل</td>
-                                <td>{{ $supplier->id }}</td>
+                                <td>{{ $supplier->email }}</td>
                                 <td style="width: 5%">کیفیت خدمات</td>
                                 <td>
                                     @if( $supplier->quality == 5)
