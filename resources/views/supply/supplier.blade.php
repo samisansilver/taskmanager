@@ -57,8 +57,12 @@
                                 <td>{{ $supplier->codekargah }}</td>
                                 <td style="width: 5%">کد ثبت اشخاص</td>
                                 <td>{{ $supplier->codesabteashkhas }}</td>
-                                <td style="width: 5%">-</td>
-                                <td>-</td>
+                                <td style="width: 5%">سابقه همکاری</td>
+                                @if( $supplier->pre_act == 0)
+                                    <td style="width: 5%">خیر</td>
+                                    @else
+                                    <td style="width: 5%">بله</td>
+                                @endif
                             </tr>
                         </tbody>
                     </table>

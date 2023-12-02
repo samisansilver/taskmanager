@@ -38,6 +38,7 @@ class Company extends Model
       'codekargah',
       'codesabtashkhas',
       'user_id',
+      'pre_act',
     ];
 
     use HasFactory;

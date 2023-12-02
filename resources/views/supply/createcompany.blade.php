@@ -76,6 +76,8 @@
                         <td><input name="shenasesabt" type="text" placeholder="شناسه ثبت" value=""></td>
                         <td><input name="codekargah" type="text" placeholder="کد کارگاه" value=""></td>
                         <td><input name="codesabtashkhas" type="text" placeholder="کد ثبت اشخاص" value=""></td>
+                            <td><label>سابقه همکاری</label>
+                                <input name="pre_act" type="checkbox" value="1"></td>
                         </table>
                         <button style="width: 100%;background: green;height: 40px;color: white">ارسال</button>
                     </form>

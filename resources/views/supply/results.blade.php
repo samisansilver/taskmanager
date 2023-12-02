@@ -12,6 +12,7 @@
                         <thead>
                         <tr>
                             <th></th>
+                            <th>سابقه همکاری</th>
                             <th>نام شخص</th>
                             <th>نام شرکت</th>
                             <th>شماره تلفن</th>
@@ -19,7 +20,7 @@
                         </tr>
                         </thead>
                         <tbody>
-                        @foreach( $getsuppliers as  $getsupplier)
+                        @foreach( $getsuppliers->sortDesc() as  $getsupplier)
                         <tr>
                             <td>
                                 <form action="/supply/{{ $getsupplier->id }}" method="post">
@@ -27,10 +28,19 @@
                                     <button style="color: white; background: green; width: 100%;height: 40px" type="submit">مشاهده اطلاعات</button>
                                 </form>
                             </td>
+                            @if( $getsupplier->pre_act == 0)
+                                <td style="width: 5%; color: red; font-weight: bolder">خیر</td>
+                            @else
+                                <td style="width: 5%; color: green; font-weight: bolder">بله</td>
+                            @endif
                             <td>{{ $getsupplier->person }}</td>
                             <td>{{ $getsupplier->company }}</td>
                             <td>{{ $getsupplier->mobile }}</td>
-                            <td>{{ $getsupplier->user_id }}</td>
+                            @php
+                                $user = $getsupplier->user_id;
+                                $finduser = \App\Models\User::findOrFail($user);
+                            @endphp
+                            <td>{{ $finduser->name }}</td>
                         </tr>
                         @endforeach
                         </tbody>

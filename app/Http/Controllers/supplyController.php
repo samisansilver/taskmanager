@@ -45,6 +45,7 @@ class supplyController extends Controller
             'shenasesabt' => $request->shenasesabt,
             'codekargah' => $request->codekargah,
             'codesabtashkhas' => $request->codesabtashkhas,
+            'pre_act' => $request->pre_act,
             'user_id' => Auth::user()->id,
         ]);
         return to_route('supplierlist');
