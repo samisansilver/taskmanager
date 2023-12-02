@@ -28,7 +28,7 @@
                         {{ __('New Supplier') }}
                     </x-nav-link>
                     <x-nav-link :href="route('supplierlist')" :active="request()->routeIs('supplierlist')">
-                        {{ __('Supplier List') }}
+                        {{ __('Suppliers List') }}
                     </x-nav-link>
                 </div>
             </div>
@@ -98,7 +98,7 @@
                 {{ __('New Supplier') }}
             </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('supplierlist')">
-                {{ __(' Supplier List') }}
+                {{ __(' Suppliers List') }}
             </x-responsive-nav-link>
         </div>
 

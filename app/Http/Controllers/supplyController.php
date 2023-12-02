@@ -47,7 +47,7 @@ class supplyController extends Controller
             'codesabtashkhas' => $request->codesabtashkhas,
             'user_id' => Auth::user()->id,
         ]);
-        return redirect('supplierlist');
+        return to_route('supplierlist');
     }
 
     public function supplierList()
