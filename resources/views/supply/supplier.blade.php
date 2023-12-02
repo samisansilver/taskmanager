@@ -13,11 +13,11 @@
                         <tbody>
                             <tr>
                                 <td style="width: 5%">نام شخص</td>
-                                <td>{{ $supplier->id }}</td>
+                                <td>{{ $supplier->person }}</td>
                                 <td style="width: 5%">نام شرکت</td>
-                                <td>{{ $supplier->id }}</td>
+                                <td>{{ $supplier->company }}</td>
                                 <td style="width: 5%">تلفن</td>
-                                <td>{{ $supplier->user_id }}</td>
+                                <td>{{ $supplier->phone }}</td>
                                 <td style="width: 5%">موبایل</td>
                                 <td>{{ $supplier->mobile }}</td>
                             </tr>

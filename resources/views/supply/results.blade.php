@@ -26,7 +26,7 @@
                                     <button style="color: white; background: green; width: 100%;height: 40px" type="submit">مشاهده اطلاعات</button>
                                 </form>
                             </td>
-                            <td>{{ $getsupplier->name }}</td>
+                            <td>{{ $getsupplier->person }}</td>
                             <td>{{ $getsupplier->company }}</td>
                             <td>{{ $getsupplier->mobile }}</td>
                         </tr>
