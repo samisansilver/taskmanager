@@ -1,3 +1,9 @@
+<head>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/persian-datepicker@latest/dist/css/persian-datepicker.css"></link>
+    <script src="https://unpkg.com/persian-date@latest/dist/persian-date.js"></script>
+    <script src="https://unpkg.com/persian-datepicker@latest/dist/js/persian-datepicker.js"></script>
+</head>
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
@@ -10,6 +16,7 @@
                 <div class="p-6 text-gray-900" style="direction: rtl">
                     <form action="/supply/createcompany" method="post" style="padding:40px;margin:40px">
                         @csrf
+                        <br><p>اطلاعات فردی و شرکتی</p>
                         <table>
                             <tr>
                                 <td><input name="person" type="text" placeholder="نام شخص" value=""></td>
@@ -19,7 +26,7 @@
                                 <td><input name="address" type="text" placeholder="آدرس" value=""></td>
                             </tr>
                         </table>
-
+                        <br><p>ارائه دهنده</p>
                         <label>چاپ</label>
                         <input name="chap" type="checkbox" value="1">
                         <label>هدایای تبلیغاتی</label>
@@ -49,7 +56,7 @@
                         <label>غرفه سازی و نمایشگاه</label>
                         <input name="exhibition" type="checkbox" value="1"></td>>
                         <table>
-                        <td><input name="age" type="date" placeholder="سابقه همکاری" value=""></td>
+                        <td><input class="observer-example" name="age" type="text" placeholder="سابقه همکاری" value=""></td>
                         <td><input name="city" type="text" placeholder="شهر" value=""></td>
                         <td><input name="site" type="text" placeholder="سایت" value=""></td>
                         <td><input name="email" type="text" placeholder="ایمیل" value=""></td>
@@ -62,6 +69,7 @@
                             <option value="1">بقایی</option>
                         </select></td>
                         </table>
+                        <br><p>اطلاعات شرکت</p>
                         <table>
                         <td><input name="codeeghtesadi" type="text" placeholder="کد اقتصادی" value=""></td>
                         <td><input name="shenasemelli" type="text" placeholder="شناسه ملی" value=""></td>
@@ -76,3 +84,10 @@
         </div>
     </div>
 </x-app-layout>
+<script type="text/javascript">
+    $('.observer-example').persianDatepicker({
+        observer: true,
+        format: 'YYYY/MM/DD',
+        altField: '.observer-example-alt'
+    });
+</script>

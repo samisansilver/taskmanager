@@ -65,20 +65,20 @@
                                     @if(\Illuminate\Support\Facades\Auth::user()->user_role == 1 )
                                     <form action="/delete/{{ $getuserjob->id }}" method="post">
                                         @csrf
-                                        <button style="background: red;color: white" type="submit">Delete</button>
+                                        <button style="color: red; font-weight: bolder" type="submit">Delete</button>
                                     </form>
                                 </td>
                                    @endif
                                 <td>
                                     <form action="/update/{{ $getuserjob->id }}" method="post">
                                         @csrf
-                                        <button style="background: darkgreen;color: white" type="submit">Done</button>
+                                        <button style="color: darkgreen; font-weight: bolder" type="submit">Done</button>
                                     </form>
                                 </td>
                                 <td>
                                     <form action="/edit-task/{{ $getuserjob->id }}" method="post">
                                         @csrf
-                                        <button style="background: yellow;" type="submit">Edit</button>
+                                        <button style="color: darkorange; font-weight: bolder" type="submit">Edit</button>
                                     </form>
                                 </td>
                             </tr>

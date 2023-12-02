@@ -15,6 +15,7 @@
                             <th>نام شخص</th>
                             <th>نام شرکت</th>
                             <th>شماره تلفن</th>
+                            <th>ایجاد کننده</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -29,6 +30,7 @@
                             <td>{{ $getsupplier->person }}</td>
                             <td>{{ $getsupplier->company }}</td>
                             <td>{{ $getsupplier->mobile }}</td>
+                            <td>{{ $getsupplier->user_id }}</td>
                         </tr>
                         @endforeach
                         </tbody>
