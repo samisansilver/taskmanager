@@ -74,4 +74,21 @@ class supplyController extends Controller
         $supplier = Company::find($id);
         return view('supply.supplier', compact('supplier'));
     }
+
+    public function updatePreAct(Request $request, $id)
+    {
+        $getcompany = Company::findOrFail($id);
+        if ($request->pre_act == 1) {
+            $getcompany->update([
+                'pre_act' => 1
+
+            ]);
+        }elseif($request->pre_act == 0){
+            $getcompany->update([
+                'pre_act' => 0
+            ]);
+        }
+        return redirect('/dashboard');
+    }
+
 }

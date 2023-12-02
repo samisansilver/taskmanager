@@ -50,6 +50,7 @@ Route::prefix('/supply')->group( function (){
     Route::get('/supplier-list', [\App\Http\Controllers\supplyController::class, 'supplierList'])->name('supplierlist');
     Route::post('/getsupplier', [\App\Http\Controllers\supplyController::class, 'getSupplier'])->name('getsupplier');
     Route::post('/{id}', [\App\Http\Controllers\supplyController::class, 'showData'])->name('showcompany');
+    Route::post('/previous-activity/{id}', [\App\Http\Controllers\supplyController::class, 'updatePreAct']);
 //    Route::post('/supplier', [\App\Http\Controllers\supplyController::class, 'showData'])->name('showcompany');
 });
 

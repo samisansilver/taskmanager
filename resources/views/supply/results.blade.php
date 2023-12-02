@@ -29,9 +29,17 @@
                                 </form>
                             </td>
                             @if( $getsupplier->pre_act == 0)
-                                <td style="width: 5%; color: red; font-weight: bolder">خیر</td>
-                            @else
-                                <td style="width: 5%; color: green; font-weight: bolder">بله</td>
+                                <td style="width: 5%; background: red; font-weight: bolder; color: white">
+                                    <form action="/supply/previous-activity/{{ $getsupplier->id }}" method="post">
+                                        @csrf
+                                        <input type="hidden" name="pre_act" value="1">
+                                        <button type="submit">خیر</button></form></td>
+                            @elseif( $getsupplier->pre_act == 1)
+                                <td style="width: 5%; background: darkgreen; font-weight: bolder; color: white">
+                                    <form action="/supply/previous-activity/{{ $getsupplier->id }}" method="post">
+                                        @csrf
+                                        <input type="hidden" name="pre_act" value="0">
+                                    <button type="submit">بله</button></form></td>
                             @endif
                             <td>{{ $getsupplier->person }}</td>
                             <td>{{ $getsupplier->company }}</td>
