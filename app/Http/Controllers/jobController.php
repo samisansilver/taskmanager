@@ -75,6 +75,11 @@ class jobController extends Controller
             'description' => $request->description,
             'process' => $request->process
         ]);
+        if ($request->process == 4) {
+            $upjob->update([
+                'status' => 2
+            ]);
+        }
         return redirect('/selectuser');
     }
 
