@@ -29,6 +29,42 @@
         @if(\Illuminate\Support\Facades\Auth::user()->user_role == 1)
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 container">
             <div class="row align-items-start bg-white overflow-hidden shadow-sm sm:rounded-lg">
+                <table style="direction: ltr; text-align: center">
+                    <thead>
+                        <tr>
+                            <th>name</th>
+                            <th>Last login</th>
+                            <th>name</th>
+                            <th>Last login</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="direction: ltr">{{ \App\Models\User::findOrFail(1)->name }}</td>
+                            <td style="direction: ltr">{{ \App\Models\User::findOrFail(1)->last_login }}</td>
+                            <td style="direction: ltr">{{ \App\Models\User::findOrFail(4)->name }}</td>
+                            <td style="direction: ltr">{{ \App\Models\User::findOrFail(4)->last_login }}</td>
+                        </tr>
+                        <tr>
+                            <td style="direction: ltr">{{ \App\Models\User::findOrFail(5)->name }}</td>
+                            <td style="direction: ltr">{{ \App\Models\User::findOrFail(5)->last_login }}</td>
+                            <td style="direction: ltr">{{ \App\Models\User::findOrFail(6)->name }}</td>
+                            <td style="direction: ltr">{{ \App\Models\User::findOrFail(6)->last_login }}</td>
+                        </tr>
+                        <tr>
+                            <td style="direction: ltr">{{ \App\Models\User::findOrFail(7)->name }}</td>
+                            <td style="direction: ltr">{{ \App\Models\User::findOrFail(7)->last_login }}</td>
+                            <td style="direction: ltr">{{ \App\Models\User::findOrFail(8)->name }}</td>
+                            <td style="direction: ltr">{{ \App\Models\User::findOrFail(8)->last_login }}</td>
+                        </tr>
+                        <tr>
+                            <td style="direction: ltr">{{ \App\Models\User::findOrFail(9)->name }}</td>
+                            <td style="direction: ltr">{{ \App\Models\User::findOrFail(9)->last_login }}</td>
+                            <td style="direction: ltr">{{ \App\Models\User::findOrFail(10)->name }}</td>
+                            <td style="direction: ltr">{{ \App\Models\User::findOrFail(10)->last_login }}</td>
+                        </tr>
+                    </tbody>
+                </table>
                 <div class="col p-6">
                     <table class="" style="width: 100%; text-align: right">
                         <thead>

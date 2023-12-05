@@ -20,7 +20,7 @@ Route::get('/', function () {
 
 Route::get('/dashboard', function () {
     return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+})->middleware(['auth', 'verified', 'lastLogin'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -58,9 +58,5 @@ Route::prefix('/supply')->group( function (){
       $sam = \Illuminate\Support\Facades\Auth::user()->getCompanies;
       return $sam->where('chap' , 1);
 });
-
-    Route::get('/test', function (){
-        return view('test');
-    });
 
 require __DIR__.'/auth.php';
