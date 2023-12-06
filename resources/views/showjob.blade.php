@@ -49,17 +49,17 @@
                                 @endif
                                 <td style="direction:rtl">{{ $getuserjob->description }}</td>
                                 <td style="direction:ltr">
-                                @if( $getuserjob->process == 0 )
-                                        <p style="background:orange;color:white;font-size:15px;font-weight: bolder;width: 10%">0%</p>
-                                    @elseif($getuserjob->process == 1 )
-                                        <p style="background:yellow;color:black;font-size:20px;font-weight: bolder;width: 30%">25%</p>
-                                    @elseif($getuserjob->process == 2 )
-                                        <p style="background:greenyellow;color:black;font-size:20px;font-weight: bolder;width: 50%">50%</p>
-                                    @elseif($getuserjob->process == 3 )
-                                        <p style="background:green;color:white;font-size:20px;font-weight: bolder;width: 75%">75%</p>
+                                    @if( $getuserjob->process <= 10 )
+                                        <p style="width: 5%; height: 35px ; background: red; color: white; font-size: 12px; vertical-align: middle; padding-top: 5%">0%</p>
+                                    @elseif( $getuserjob->process <= 30 )
+                                        <p style="width: {{ $getuserjob->process }}%; height: 35px ; background: orangered; color: black; font-size: 12px; vertical-align: middle; padding-top: 5%">{{ $getuserjob->process }}%</p>
+                                    @elseif( $getuserjob->process <= 50 )
+                                        <p style="width: {{ $getuserjob->process }}%; height: 35px ; background: yellow; color: black; font-size: 12px; vertical-align: middle; padding-top: 5%">{{ $getuserjob->process }}%</p>
+                                    @elseif( $getuserjob->process <= 80 )
+                                        <p style="width: {{ $getuserjob->process }}%; height: 35px ; background: greenyellow; color: black; font-size: 12px; vertical-align: middle; padding-top: 5%">{{ $getuserjob->process }}%</p>
                                     @else
-                                        <p style="background:darkgreen;color:white;font-size:20px;font-weight: bolder;width: 100%">100%</p>
-                                @endif
+                                        <p style="width: {{ $getuserjob->process }}%; height: 35px ; background: green; color: white; font-size: 12px; vertical-align: middle; padding-top: 5%">{{ $getuserjob->process }}%</p>
+                                    @endif
                                 </td>
                                 <td>
                                     @if(\Illuminate\Support\Facades\Auth::user()->user_role == 1 )

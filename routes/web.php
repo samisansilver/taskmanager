@@ -53,7 +53,7 @@ Route::prefix('/supply')->group( function (){
     Route::post('/previous-activity/{id}', [\App\Http\Controllers\supplyController::class, 'updatePreAct']);
 //    Route::post('/supplier', [\App\Http\Controllers\supplyController::class, 'showData'])->name('showcompany');
 });
-
+/*
 Route::get('/del', function (){
       $gettasks = \App\Models\Job::where('process', 0)->get();
       foreach ($gettasks as $gettask) {
@@ -61,44 +61,7 @@ Route::get('/del', function (){
               'process' => 0
           ]);
       }
-});
+});*/
 
-Route::get('/del1', function (){
-      $gettasks = \App\Models\Job::where('process', 1)->get();
-      foreach ($gettasks as $gettask) {
-          $gettask->update([
-              'process' => 30
-          ]);
-      }
-});
-
-
-Route::get('/del2', function (){
-      $gettasks = \App\Models\Job::where('process', 2)->get();
-      foreach ($gettasks as $gettask) {
-          $gettask->update([
-              'process' => 50
-          ]);
-      }
-});
-
-
-Route::get('/del3', function (){
-      $gettasks = \App\Models\Job::where('process', 3)->get();
-      foreach ($gettasks as $gettask) {
-          $gettask->update([
-              'process' => 80
-          ]);
-      }
-});
-
-Route::get('/del4', function (){
-      $gettasks = \App\Models\Job::where('process', 4)->get();
-      foreach ($gettasks as $gettask) {
-          $gettask->update([
-              'process' => 100
-          ]);
-      }
-});
 
 require __DIR__.'/auth.php';
