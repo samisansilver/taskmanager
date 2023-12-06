@@ -32,7 +32,7 @@
                 <table style="direction: ltr; text-align: center">
                     <thead>
                         <tr>
-                            <th>name</th>
+                            <th>Name</th>
                             <th>Last login</th>
                             <th>name</th>
                             <th>Last login</th>
@@ -80,19 +80,19 @@
                             <tbody>
                             @if( $user->archive == null)
                             <tr>
-                            <td style="width: 40%">
-                            @if( $user->process == 0 )
-                                <p style="width: 5%; background: orange">0%</p>
-                            @elseif( $user->process == 1 )
-                                <p style="width: 25%; background: yellow">25%</p>
-                            @elseif( $user->process == 2 )
-                                <p style="width: 50%; background: greenyellow">50%</p>
-                            @elseif( $user->process == 2 )
-                                <p style="width: 75%; background: green">75%</p>
-                            @else( $user->process == 2 )
-                                <p style="width: 100%; background: darkgreen;color: white">100%</p>
-                            @endif
-                            </td>
+                                <td style="width: 50%">
+                                    @if( $user->process <= 10 )
+                                        <p style="width: 5%; height: 35px ; background: red; color: white; font-size: 12px; vertical-align: middle; padding-top: 5%">0%</p>
+                                    @elseif( $user->process <= 30 )
+                                        <p style="width: {{ $user->process }}%; height: 35px ; background: orangered; color: black; font-size: 12px; vertical-align: middle; padding-top: 5%">{{ $user->process }}%</p>
+                                    @elseif( $user->process <= 50 )
+                                        <p style="width: {{ $user->process }}%; height: 35px ; background: yellow; color: black; font-size: 12px; vertical-align: middle; padding-top: 5%">{{ $user->process }}%</p>
+                                    @elseif( $user->process <= 80 )
+                                        <p style="width: {{ $user->process }}%; height: 35px ; background: greenyellow; color: black; font-size: 12px; vertical-align: middle; padding-top: 5%">{{ $user->process }}%</p>
+                                    @else
+                                        <p style="width: {{ $user->process }}%; height: 35px ; background: green; color: white; font-size: 12px; vertical-align: middle; padding-top: 5%">{{ $user->process }}%</p>
+                                    @endif
+                                </td>
                             @if($user->status == 1)
                                 <td style="color: red; width: 40%">{{ $user->title }}</td>
                             @else
@@ -120,17 +120,17 @@
                             <tbody>
                             @if( $user->archive == null)
                             <tr>
-                                <td style="width: 40%">
-                                    @if( $user->process == 0 )
-                                        <p style="width: 5%; background: orange">0%</p>
-                                    @elseif( $user->process == 1 )
-                                        <p style="width: 25%; background: yellow">25%</p>
-                                    @elseif( $user->process == 2 )
-                                        <p style="width: 50%; background: greenyellow">50%</p>
-                                    @elseif( $user->process == 2 )
-                                        <p style="width: 75%; background: green">75%</p>
-                                    @else( $user->process == 2 )
-                                        <p style="width: 100%; background: darkgreen;color: white">100%</p>
+                                <td style="width: 50%">
+                                    @if( $user->process <= 10 )
+                                        <p style="width: 5%; height: 35px ; background: red; color: white; font-size: 12px; vertical-align: middle; padding-top: 5%">0%</p>
+                                    @elseif( $user->process <= 30 )
+                                        <p style="width: {{ $user->process }}%; height: 35px ; background: orangered; color: black; font-size: 12px; vertical-align: middle; padding-top: 5%">{{ $user->process }}%</p>
+                                    @elseif( $user->process <= 50 )
+                                        <p style="width: {{ $user->process }}%; height: 35px ; background: yellow; color: black; font-size: 12px; vertical-align: middle; padding-top: 5%">{{ $user->process }}%</p>
+                                    @elseif( $user->process <= 80 )
+                                        <p style="width: {{ $user->process }}%; height: 35px ; background: greenyellow; color: black; font-size: 12px; vertical-align: middle; padding-top: 5%">{{ $user->process }}%</p>
+                                    @else
+                                        <p style="width: {{ $user->process }}%; height: 35px ; background: green; color: white; font-size: 12px; vertical-align: middle; padding-top: 5%">{{ $user->process }}%</p>
                                     @endif
                                 </td>
                             @if($user->status == 1)
@@ -160,17 +160,17 @@
                             <tbody>
                             @if( $user->archive == null)
                             <tr>
-                                <td style="width: 40%">
-                                    @if( $user->process == 0 )
-                                        <p style="width: 5%; background: orange">0%</p>
-                                    @elseif( $user->process == 1 )
-                                        <p style="width: 25%; background: yellow">25%</p>
-                                    @elseif( $user->process == 2 )
-                                        <p style="width: 50%; background: greenyellow">50%</p>
-                                    @elseif( $user->process == 2 )
-                                        <p style="width: 75%; background: green">75%</p>
-                                    @else( $user->process == 2 )
-                                        <p style="width: 100%; background: darkgreen;color: white">100%</p>
+                                <td style="width: 50%">
+                                    @if( $user->process <= 10 )
+                                        <p style="width: 5%; height: 35px ; background: red; color: white; font-size: 12px; vertical-align: middle; padding-top: 5%">0%</p>
+                                    @elseif( $user->process <= 30 )
+                                        <p style="width: {{ $user->process }}%; height: 35px ; background: orangered; color: black; font-size: 12px; vertical-align: middle; padding-top: 5%">{{ $user->process }}%</p>
+                                    @elseif( $user->process <= 50 )
+                                        <p style="width: {{ $user->process }}%; height: 35px ; background: yellow; color: black; font-size: 12px; vertical-align: middle; padding-top: 5%">{{ $user->process }}%</p>
+                                    @elseif( $user->process <= 80 )
+                                        <p style="width: {{ $user->process }}%; height: 35px ; background: greenyellow; color: black; font-size: 12px; vertical-align: middle; padding-top: 5%">{{ $user->process }}%</p>
+                                    @else
+                                        <p style="width: {{ $user->process }}%; height: 35px ; background: green; color: white; font-size: 12px; vertical-align: middle; padding-top: 5%">{{ $user->process }}%</p>
                                     @endif
                                 </td>
                             @if($user->status == 1)
@@ -200,17 +200,17 @@
                             <tbody>
                             @if( $user->archive == null)
                             <tr>
-                                <td style="width: 40%">
-                                    @if( $user->process == 0 )
-                                        <p style="width: 5%; background: orange">0%</p>
-                                    @elseif( $user->process == 1 )
-                                        <p style="width: 25%; background: yellow">25%</p>
-                                    @elseif( $user->process == 2 )
-                                        <p style="width: 50%; background: greenyellow">50%</p>
-                                    @elseif( $user->process == 2 )
-                                        <p style="width: 75%; background: green">75%</p>
-                                    @else( $user->process == 2 )
-                                        <p style="width: 100%; background: darkgreen;color: white">100%</p>
+                                <td style="width: 50%">
+                                    @if( $user->process <= 10 )
+                                        <p style="width: 5%; height: 35px ; background: red; color: white; font-size: 12px; vertical-align: middle; padding-top: 5%">0%</p>
+                                    @elseif( $user->process <= 30 )
+                                        <p style="width: {{ $user->process }}%; height: 35px ; background: orangered; color: black; font-size: 12px; vertical-align: middle; padding-top: 5%">{{ $user->process }}%</p>
+                                    @elseif( $user->process <= 50 )
+                                        <p style="width: {{ $user->process }}%; height: 35px ; background: yellow; color: black; font-size: 12px; vertical-align: middle; padding-top: 5%">{{ $user->process }}%</p>
+                                    @elseif( $user->process <= 80 )
+                                        <p style="width: {{ $user->process }}%; height: 35px ; background: greenyellow; color: black; font-size: 12px; vertical-align: middle; padding-top: 5%">{{ $user->process }}%</p>
+                                    @else
+                                        <p style="width: {{ $user->process }}%; height: 35px ; background: green; color: white; font-size: 12px; vertical-align: middle; padding-top: 5%">{{ $user->process }}%</p>
                                     @endif
                                 </td>
                             @if($user->status == 1)
@@ -242,17 +242,17 @@
                             <tbody>
                             @if( $user->archive == null)
                             <tr>
-                                <td style="width: 40%">
-                                    @if( $user->process == 0 )
-                                        <p style="width: 5%; background: orange">0%</p>
-                                    @elseif( $user->process == 1 )
-                                        <p style="width: 25%; background: yellow">25%</p>
-                                    @elseif( $user->process == 2 )
-                                        <p style="width: 50%; background: greenyellow">50%</p>
-                                    @elseif( $user->process == 2 )
-                                        <p style="width: 75%; background: green">75%</p>
-                                    @else( $user->process == 2 )
-                                        <p style="width: 100%; background: darkgreen;color: white">100%</p>
+                                <td style="width: 50%">
+                                    @if( $user->process <= 10 )
+                                        <p style="width: 5%; height: 35px ; background: red; color: white; font-size: 12px; vertical-align: middle; padding-top: 5%">0%</p>
+                                    @elseif( $user->process <= 30 )
+                                        <p style="width: {{ $user->process }}%; height: 35px ; background: orangered; color: black; font-size: 12px; vertical-align: middle; padding-top: 5%">{{ $user->process }}%</p>
+                                    @elseif( $user->process <= 50 )
+                                        <p style="width: {{ $user->process }}%; height: 35px ; background: yellow; color: black; font-size: 12px; vertical-align: middle; padding-top: 5%">{{ $user->process }}%</p>
+                                    @elseif( $user->process <= 80 )
+                                        <p style="width: {{ $user->process }}%; height: 35px ; background: greenyellow; color: black; font-size: 12px; vertical-align: middle; padding-top: 5%">{{ $user->process }}%</p>
+                                    @else
+                                        <p style="width: {{ $user->process }}%; height: 35px ; background: green; color: white; font-size: 12px; vertical-align: middle; padding-top: 5%">{{ $user->process }}%</p>
                                     @endif
                                 </td>
                             @if($user->status == 1)
@@ -282,17 +282,17 @@
                             <tbody>
                             @if( $user->archive == null)
                             <tr>
-                                <td style="width: 40%">
-                                    @if( $user->process == 0 )
-                                        <p style="width: 5%; background: orange">0%</p>
-                                    @elseif( $user->process == 1 )
-                                        <p style="width: 25%; background: yellow">25%</p>
-                                    @elseif( $user->process == 2 )
-                                        <p style="width: 50%; background: greenyellow">50%</p>
-                                    @elseif( $user->process == 2 )
-                                        <p style="width: 75%; background: green">75%</p>
-                                    @else( $user->process == 2 )
-                                        <p style="width: 100%; background: darkgreen;color: white">100%</p>
+                                <td style="width: 50%">
+                                    @if( $user->process <= 10 )
+                                        <p style="width: 5%; height: 35px ; background: red; color: white; font-size: 12px; vertical-align: middle; padding-top: 5%">0%</p>
+                                    @elseif( $user->process <= 30 )
+                                        <p style="width: {{ $user->process }}%; height: 35px ; background: orangered; color: black; font-size: 12px; vertical-align: middle; padding-top: 5%">{{ $user->process }}%</p>
+                                    @elseif( $user->process <= 50 )
+                                        <p style="width: {{ $user->process }}%; height: 35px ; background: yellow; color: black; font-size: 12px; vertical-align: middle; padding-top: 5%">{{ $user->process }}%</p>
+                                    @elseif( $user->process <= 80 )
+                                        <p style="width: {{ $user->process }}%; height: 35px ; background: greenyellow; color: black; font-size: 12px; vertical-align: middle; padding-top: 5%">{{ $user->process }}%</p>
+                                    @else
+                                        <p style="width: {{ $user->process }}%; height: 35px ; background: green; color: white; font-size: 12px; vertical-align: middle; padding-top: 5%">{{ $user->process }}%</p>
                                     @endif
                                 </td>
                             @if($user->status == 1)
@@ -322,17 +322,17 @@
                             <tbody>
                             @if( $user->archive == null)
                             <tr>
-                                <td style="width: 40%">
-                                    @if( $user->process == 0 )
-                                        <p style="width: 5%; background: orange">0%</p>
-                                    @elseif( $user->process == 1 )
-                                        <p style="width: 25%; background: yellow">25%</p>
-                                    @elseif( $user->process == 2 )
-                                        <p style="width: 50%; background: greenyellow">50%</p>
-                                    @elseif( $user->process == 2 )
-                                        <p style="width: 75%; background: green">75%</p>
-                                    @else( $user->process == 2 )
-                                        <p style="width: 100%; background: darkgreen;color: white">100%</p>
+                                <td style="width: 50%">
+                                    @if( $user->process <= 10 )
+                                        <p style="width: 5%; height: 35px ; background: red; color: white; font-size: 12px; vertical-align: middle; padding-top: 5%">0%</p>
+                                    @elseif( $user->process <= 30 )
+                                        <p style="width: {{ $user->process }}%; height: 35px ; background: orangered; color: black; font-size: 12px; vertical-align: middle; padding-top: 5%">{{ $user->process }}%</p>
+                                    @elseif( $user->process <= 50 )
+                                        <p style="width: {{ $user->process }}%; height: 35px ; background: yellow; color: black; font-size: 12px; vertical-align: middle; padding-top: 5%">{{ $user->process }}%</p>
+                                    @elseif( $user->process <= 80 )
+                                        <p style="width: {{ $user->process }}%; height: 35px ; background: greenyellow; color: black; font-size: 12px; vertical-align: middle; padding-top: 5%">{{ $user->process }}%</p>
+                                    @else
+                                        <p style="width: {{ $user->process }}%; height: 35px ; background: green; color: white; font-size: 12px; vertical-align: middle; padding-top: 5%">{{ $user->process }}%</p>
                                     @endif
                                 </td>
                             @if($user->status == 1)
@@ -362,17 +362,17 @@
                             <tbody>
                             @if( $user->archive == null)
                             <tr>
-                                <td style="width: 40%">
-                                    @if( $user->process == 0 )
-                                        <p style="width: 5%; background: orange">0%</p>
-                                    @elseif( $user->process == 1 )
-                                        <p style="width: 25%; background: yellow">25%</p>
-                                    @elseif( $user->process == 2 )
-                                        <p style="width: 50%; background: greenyellow">50%</p>
-                                    @elseif( $user->process == 2 )
-                                        <p style="width: 75%; background: green">75%</p>
-                                    @else( $user->process == 2 )
-                                        <p style="width: 100%; background: darkgreen;color: white">100%</p>
+                                <td style="width: 50%">
+                                    @if( $user->process <= 10 )
+                                        <p style="width: 5%; height: 35px ; background: red; color: white; font-size: 12px; vertical-align: middle; padding-top: 5%">0%</p>
+                                    @elseif( $user->process <= 30 )
+                                        <p style="width: {{ $user->process }}%; height: 35px ; background: orangered; color: black; font-size: 12px; vertical-align: middle; padding-top: 5%">{{ $user->process }}%</p>
+                                    @elseif( $user->process <= 50 )
+                                        <p style="width: {{ $user->process }}%; height: 35px ; background: yellow; color: black; font-size: 12px; vertical-align: middle; padding-top: 5%">{{ $user->process }}%</p>
+                                    @elseif( $user->process <= 80 )
+                                        <p style="width: {{ $user->process }}%; height: 35px ; background: greenyellow; color: black; font-size: 12px; vertical-align: middle; padding-top: 5%">{{ $user->process }}%</p>
+                                    @else
+                                        <p style="width: {{ $user->process }}%; height: 35px ; background: green; color: white; font-size: 12px; vertical-align: middle; padding-top: 5%">{{ $user->process }}%</p>
                                     @endif
                                 </td>
                             @if($user->status == 1)
@@ -406,17 +406,17 @@
                                 <tbody>
                                 @if( $user->archive == null)
                                 <tr>
-                                    <td style="width: 40%">
-                                        @if( $user->process == 0 )
-                                            <p style="width: 5%; background: orange">0%</p>
-                                        @elseif( $user->process == 1 )
-                                            <p style="width: 25%; background: yellow">25%</p>
-                                        @elseif( $user->process == 2 )
-                                            <p style="width: 50%; background: greenyellow">50%</p>
-                                        @elseif( $user->process == 2 )
-                                            <p style="width: 75%; background: green">75%</p>
-                                        @else( $user->process == 2 )
-                                            <p style="width: 100%; background: darkgreen;color: white">100%</p>
+                                    <td style="width: 50%">
+                                        @if( $user->process <= 10 )
+                                            <p style="width: 5%; height: 35px ; background: red; color: white; font-size: 12px; vertical-align: middle; padding-top: 5%">0%</p>
+                                        @elseif( $user->process <= 30 )
+                                            <p style="width: {{ $user->process }}%; height: 35px ; background: orangered; color: black; font-size: 12px; vertical-align: middle; padding-top: 5%">{{ $user->process }}%</p>
+                                        @elseif( $user->process <= 50 )
+                                            <p style="width: {{ $user->process }}%; height: 35px ; background: yellow; color: black; font-size: 12px; vertical-align: middle; padding-top: 5%">{{ $user->process }}%</p>
+                                        @elseif( $user->process <= 80 )
+                                            <p style="width: {{ $user->process }}%; height: 35px ; background: greenyellow; color: black; font-size: 12px; vertical-align: middle; padding-top: 5%">{{ $user->process }}%</p>
+                                        @else
+                                            <p style="width: {{ $user->process }}%; height: 35px ; background: green; color: white; font-size: 12px; vertical-align: middle; padding-top: 5%">{{ $user->process }}%</p>
                                         @endif
                                     </td>
                                 @if($user->status == 1)
@@ -446,17 +446,17 @@
                                 <tbody>
                                 @if( $user->archive == null)
                                 <tr>
-                                    <td style="width: 40%">
-                                        @if( $user->process == 0 )
-                                            <p style="width: 5%; background: orange">0%</p>
-                                        @elseif( $user->process == 1 )
-                                            <p style="width: 25%; background: yellow">25%</p>
-                                        @elseif( $user->process == 2 )
-                                            <p style="width: 50%; background: greenyellow">50%</p>
-                                        @elseif( $user->process == 2 )
-                                            <p style="width: 75%; background: green">75%</p>
-                                        @else( $user->process == 2 )
-                                            <p style="width: 100%; background: darkgreen;color: white">100%</p>
+                                    <td style="width: 50%">
+                                        @if( $user->process <= 10 )
+                                            <p style="width: 5%; height: 35px ; background: red; color: white; font-size: 12px; vertical-align: middle; padding-top: 5%">0%</p>
+                                        @elseif( $user->process <= 30 )
+                                            <p style="width: {{ $user->process }}%; height: 35px ; background: orangered; color: black; font-size: 12px; vertical-align: middle; padding-top: 5%">{{ $user->process }}%</p>
+                                        @elseif( $user->process <= 50 )
+                                            <p style="width: {{ $user->process }}%; height: 35px ; background: yellow; color: black; font-size: 12px; vertical-align: middle; padding-top: 5%">{{ $user->process }}%</p>
+                                        @elseif( $user->process <= 80 )
+                                            <p style="width: {{ $user->process }}%; height: 35px ; background: greenyellow; color: black; font-size: 12px; vertical-align: middle; padding-top: 5%">{{ $user->process }}%</p>
+                                        @else
+                                            <p style="width: {{ $user->process }}%; height: 35px ; background: green; color: white; font-size: 12px; vertical-align: middle; padding-top: 5%">{{ $user->process }}%</p>
                                         @endif
                                     </td>
                                 @if($user->status == 1)

@@ -58,7 +58,7 @@ class jobController extends Controller
         $upjob = Job::findOrFail($id);
         $upjob->update([
             'status' => 2,
-            'process' => 4,
+            'process' => 100,
         ]);
         return redirect('/selectuser');
     }
@@ -76,7 +76,7 @@ class jobController extends Controller
             'description' => $request->description,
             'process' => $request->process
         ]);
-        if ($request->process == 4) {
+        if ($request->process == 100) {
             $upjob->update([
                 'status' => 2
             ]);

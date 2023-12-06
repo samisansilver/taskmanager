@@ -17,13 +17,22 @@
                     <label>
                         <input name="user" value="" hidden="">
                     </label><br>
-                    <label for="process">درصد پیشرفت</label><select type="text" name="process" id="process">
-                                <option type="text" name="process" value="1">25%</option>
-                                <option type="text" name="process" value="2">50%</option>
-                                <option type="text" name="process" value="3">75%</option>
-                                <option type="text" name="process" value="4">100%</option>
-                        </select>
-                    <button>ارسال</button>
+                    <label for="process">درصد پیشرفت</label><br><br>
+                    <input style="width: 50%; direction: rtl" name="process" type="range" value="{{ $ourjob->process }}" min="0" max="100" step="10" list="values"><br><br>
+                    <datalist id="values">
+                        <option value="0" label="0"></option>
+                        <option value="10" label="10"></option>
+                        <option value="20" label="20"></option>
+                        <option value="30" label="30"></option>
+                        <option value="40" label="40"></option>
+                        <option value="50" label="50"></option>
+                        <option value="60" label="60"></option>
+                        <option value="70" label="70"></option>
+                        <option value="80" label="80"></option>
+                        <option value="90" label="90"></option>
+                        <option value="100" label="100"></option>
+                    </datalist>
+                    <button style="background: green; color: white; padding: 10px">ارسال</button>
                 </form>
             </div>
         </div>
