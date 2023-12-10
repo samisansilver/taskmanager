@@ -53,6 +53,21 @@ Route::prefix('/supply')->group( function (){
     Route::post('/previous-activity/{id}', [\App\Http\Controllers\supplyController::class, 'updatePreAct']);
 //    Route::post('/supplier', [\App\Http\Controllers\supplyController::class, 'showData'])->name('showcompany');
 });
+
+Route::prefix('/taskgroup')->group( function (){
+    Route::get('/newtask', [\App\Http\Controllers\taskGroupController::class, 'newTask'])->name('newtask');
+    Route::post('/create-task', [\App\Http\Controllers\taskGroupController::class, 'createTask'])->name('createtask');
+    Route::post('/save-tasks', [\App\Http\Controllers\taskGroupController::class, 'saveTasks'])->name('saveTasks');
+    Route::get('/testrel', [\App\Http\Controllers\taskGroupController::class, 'testRel']);
+    Route::get('/list', [\App\Http\Controllers\taskGroupController::class, 'list'])->name('listtasks');
+    Route::get('/showtask/{id}', [\App\Http\Controllers\taskGroupController::class, 'showTask'])->name('showtask');
+    Route::post('/delete/{id}', [\App\Http\Controllers\taskGroupController::class, 'deleteGtask'])->name('deletegtask');
+    Route::post('/update/{id}', [\App\Http\Controllers\taskGroupController::class, 'updateGtask'])->name('updategtask');
+    Route::post('/edit/{id}', [\App\Http\Controllers\taskGroupController::class, 'editGtask'])->name('editgtask');
+});
+
+
+
 /*
 Route::get('/del', function (){
       $gettasks = \App\Models\Job::where('process', 0)->get();

@@ -30,6 +30,12 @@
                     <x-nav-link :href="route('supplierlist')" :active="request()->routeIs('supplierlist')">
                         {{ __('Suppliers List') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('newtask')" :active="request()->routeIs('newtask')">
+                        {{ __('Create Group Task') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('listtasks')" :active="request()->routeIs('listtasks')">
+                        {{ __('Group Task List') }}
+                    </x-nav-link>
                 </div>
             </div>
 
@@ -99,6 +105,12 @@
             </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('supplierlist')">
                 {{ __(' Suppliers List') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('newtask')">
+                {{ __('Create Group Task') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('listtasks')">
+                {{ __('Group Task List') }}
             </x-responsive-nav-link>
         </div>
 
