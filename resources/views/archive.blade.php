@@ -14,6 +14,7 @@
                             <th>id</th>
                             <th>title</th>
                             <th>description</th>
+                            <th>Name</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -21,6 +22,8 @@
                         @foreach($archtasks as $archtask)
                             @if( $archtask->archive == 1)
                                 <tr>
+                                    @php $user = \App\Models\User::findOrFail($archtask->user_id) @endphp
+                                    <td>{{ $user->name }}</td>
                                     <td>{{ $archtask->id }}</td>
                                     @if($archtask->status == 1)
                                         <td style="color: red; direction:rtl">{{ $archtask->title }}</td>
@@ -42,11 +45,11 @@
                                         @endif
                                     </td>
                                     <td>
-                                        @if(\Illuminate\Support\Facades\Auth::user()->user_role == 1 )
-                                            <form action="/unarchive/{{ $archtask->id }}" method="post">
-                                                @csrf
-                                                <button style="background: blue;color: white" type="submit">unArchive</button>
-                                            </form>
+                                    @if(\Illuminate\Support\Facades\Auth::user()->user_role == 1 )
+                                         <form action="/unarchive/{{ $archtask->id }}" method="post">
+                                             @csrf
+                                             <button style="background: blue;color: white" type="submit">unArchive</button>
+                                         </form>
                                     </td>
                                     @endif
                                 </tr>
