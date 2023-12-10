@@ -24,7 +24,6 @@
                                 <tr>
                                     @php $user = \App\Models\User::findOrFail($archtask->user_id) @endphp
                                     <td>{{ $user->name }}</td>
-                                    <td>{{ $archtask->id }}</td>
                                     @if($archtask->status == 1)
                                         <td style="color: red; direction:rtl">{{ $archtask->title }}</td>
                                     @else
