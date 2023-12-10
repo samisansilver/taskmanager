@@ -11,10 +11,10 @@
                     <table style="width: 100%">
                         <thead>
                         <tr>
-                            <th>id</th>
+                            <th>name</th>
                             <th>title</th>
                             <th>description</th>
-                            <th>Name</th>
+                            <th>id</th>
                         </tr>
                         </thead>
                         <tbody>
