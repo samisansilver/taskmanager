@@ -34,13 +34,11 @@
                                     {{ $items->description }}</a>
                                 </td>
                                 <td>
-                                    @if(\Illuminate\Support\Facades\Auth::user()->user_role == 1 )
                                         <form action="/taskgroup/delete/{{$items->id}}" method="post">
                                             @csrf
                                             <button style="color: red; font-weight: bolder" type="submit">Delete</button>
                                         </form>
                                 </td>
-                                   @endif
                                 <td>
                                     <form action="/taskgroup/update/{{$items->id}}" method="post">
                                         @csrf

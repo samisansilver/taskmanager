@@ -61,9 +61,9 @@ Route::prefix('/taskgroup')->group( function (){
     Route::get('/testrel', [\App\Http\Controllers\taskGroupController::class, 'testRel']);
     Route::get('/list', [\App\Http\Controllers\taskGroupController::class, 'list'])->name('listtasks');
     Route::get('/showtask/{id}', [\App\Http\Controllers\taskGroupController::class, 'showTask'])->name('showtask');
-    Route::post('/delete/{id}', [\App\Http\Controllers\taskGroupController::class, 'deleteGtask'])->name('deletegtask');
-    Route::post('/update/{id}', [\App\Http\Controllers\taskGroupController::class, 'updateGtask'])->name('updategtask');
-    Route::post('/edit/{id}', [\App\Http\Controllers\taskGroupController::class, 'editGtask'])->name('editgtask');
+    Route::post('/delete/{id}', [\App\Http\Controllers\taskGroupController::class, 'deleteGtask'])->name('deletegtask')->middleware('checkAdmin');
+    Route::post('/update/{id}', [\App\Http\Controllers\taskGroupController::class, 'updateGtask'])->name('updategtask')->middleware('checkAdmin');
+    Route::post('/edit/{id}', [\App\Http\Controllers\taskGroupController::class, 'editGtask'])->name('editgtask')->middleware('checkAdmin');
 });
 
 
