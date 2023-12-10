@@ -55,7 +55,7 @@ Route::prefix('/supply')->group( function (){
 });
 
 Route::prefix('/taskgroup')->group( function (){
-    Route::get('/newtask', [\App\Http\Controllers\taskGroupController::class, 'newTask'])->name('newtask');
+    Route::get('/newtask', [\App\Http\Controllers\taskGroupController::class, 'newTask'])->name('newtask')->middleware('checkAdmin');
     Route::post('/create-task', [\App\Http\Controllers\taskGroupController::class, 'createTask'])->name('createtask');
     Route::post('/save-tasks', [\App\Http\Controllers\taskGroupController::class, 'saveTasks'])->name('saveTasks');
     Route::get('/testrel', [\App\Http\Controllers\taskGroupController::class, 'testRel']);
