@@ -21,7 +21,7 @@ class lastLogin
     public function handle(Request $request, Closure $next): Response
     {
         $user = Auth::user()->id;
-        $now = Carbon::now()->format('Y-m-d');
+        $now = Carbon::now();
         $updateuser = User::findOrFail($user);
         $updateuser->update([
             'last_login' => $now
