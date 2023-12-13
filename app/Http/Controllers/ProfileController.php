@@ -3,11 +3,15 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ProfileUpdateRequest;
+use App\Models\User;
+use Carbon\Carbon;
+use Hekmatinasser\Verta\Verta;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
+use PharIo\Version\AbstractVersionConstraint;
 
 class ProfileController extends Controller
 {
@@ -56,5 +60,23 @@ class ProfileController extends Controller
         $request->session()->regenerateToken();
 
         return Redirect::to('/');
+    }
+
+    public function getDifTimeLogin()
+    {
+        $user = User::findOrFail(1)->last_login;
+//        $sam = date('Y-m-d', strtotime($user->last_login));
+        $now = \verta($user)->formatDate('Y-m-d');
+        return Carbon::yesterday()->diffInDays($user);
+//        return \verta($now)->diffDays();
+//        echo verta($now)->diffDays();
+//        $converttodd = Carbon::setTranslator($user);
+////        $userlast = Verta::createGregorian($user);
+        /*$sami = Verta::today();
+        return Verta::GregorianToJalali($sami);
+        die();
+        $date = Verta::createGregorian($userlast);
+        $date = Carbon::getHumanDiffOptions($userlast);
+        return $logdate;*/
     }
 }

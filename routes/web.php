@@ -42,6 +42,7 @@ Route::middleware('auth')->group(function () {
     Route::post('/unarchive/{id}', [\App\Http\Controllers\jobController::class, 'unArchive']);
     Route::post('/force/{id}', [\App\Http\Controllers\jobController::class, 'markforce']);
     Route::get('/export', [\App\Http\Controllers\jobController::class, 'excelExport'])->name('export');
+    Route::get('/diflogin', [\App\Http\Controllers\ProfileController::class, 'getDifTimeLogin'])->name('diflogin');
     });
 
 Route::prefix('/supply')->group( function (){

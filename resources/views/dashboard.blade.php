@@ -41,7 +41,14 @@
                     <tbody>
                         <tr>
                             <td style="direction: ltr">{{ \App\Models\User::findOrFail(1)->name }}</td>
-                            <td style="direction: ltr">{{ \App\Models\User::findOrFail(1)->last_login }}</td>
+                                @php $lastlogin = \App\Models\User::findOrFail(1)->last_login @endphp
+                                @php $falastlogin = verta($lastlogin) @endphp
+                            <td style="direction: ltr">{{ $falastlogin }}
+                                @php $difdays = \Carbon\Carbon::now()->diffInDays($lastlogin) @endphp
+                                @if( $difdays >= 3 )
+                                    🍰
+                                @endif
+                            </td>
                             <td style="direction: ltr">{{ \App\Models\User::findOrFail(4)->name }}</td>
                             <td style="direction: ltr">{{ \App\Models\User::findOrFail(4)->last_login }}</td>
                         </tr>
