@@ -611,7 +611,7 @@
                             <button type="submit"><a style="background: green; color: white; padding: 10px; border-radius: 10px" href="{{ route('export') }}">export</a></button>
                         </table>
                         {{ $getjobs }}
-                        {{--                    این قسمت کاملاً درست است و برای نمایش کامل جاب هاست--}}
+                        {{--                   این قسمت کاملاً درست است و برای نمایش کامل جاب هاست--}}
 
                     </div>
                 </div>
