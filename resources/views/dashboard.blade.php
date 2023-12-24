@@ -26,7 +26,6 @@
         </h2>
     </x-slot>
     <div class="py-12">
-        @if(\Illuminate\Support\Facades\Auth::user()->user_role == 1)
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 container">
             <div class="row align-items-start bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <table style="direction: ltr; text-align: center">
@@ -121,6 +120,7 @@
                         </tr>
                     </tbody>
                 </table>
+                @if(\Illuminate\Support\Facades\Auth::user()->user_role == 1)
                 <div class="col p-6">
                     <table class="" style="width: 100%; text-align: right">
                         <thead>
