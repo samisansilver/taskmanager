@@ -132,7 +132,7 @@
                         </thead>
                         @php $users = \App\Models\User::find(1) @endphp
                         <h2 style="text-align: right;font-size: 30px;font-weight: bolder">{{ $users->name }}</h2>
-                        @foreach($users->getJobs->take(15)->sortDesc() as $user)
+                        @foreach($users->getJobs->sortDesc()->take(15) as $user)
                             <tbody>
                             @if( $user->archive == null)
                             <tr>
@@ -172,7 +172,7 @@
                         </thead>
                         @php $users = \App\Models\User::find(4) @endphp
                         <h2 style="text-align: right;font-size: 30px;font-weight: bolder">{{ $users->name }}</h2>
-                        @foreach($users->getJobs->take(15)->sortDesc() as $user)
+                        @foreach($users->getJobs->sortDesc()->take(15) as $user)
                             <tbody>
                             @if( $user->archive == null)
                             <tr>
@@ -212,7 +212,7 @@
                         </thead>
                         @php $users = \App\Models\User::find(5) @endphp
                         <h2 style="text-align: right;font-size: 30px;font-weight: bolder">{{ $users->name }}</h2>
-                        @foreach($users->getJobs->take(15)->sortDesc() as $user)
+                        @foreach($users->getJobs->sortDesc()->take(15) as $user)
                             <tbody>
                             @if( $user->archive == null)
                             <tr>
@@ -252,7 +252,7 @@
                         </thead>
                         @php $users = \App\Models\User::findOrFail(6) @endphp
                         <h2 style="text-align: right;font-size: 30px;font-weight: bolder">{{ $users->name }}</h2>
-                        @foreach($users->getJobs->take(15)->sortDesc() as $user)
+                        @foreach($users->getJobs->sortDesc()->take(15) as $user)
                             <tbody>
                             @if( $user->archive == null)
                             <tr>
@@ -294,7 +294,7 @@
                         </thead>
                         @php $users = \App\Models\User::find(7) @endphp
                         <h2 style="text-align: right;font-size: 30px;font-weight: bolder">{{ $users->name }}</h2>
-                        @foreach($users->getJobs->take(15)->sortDesc() as $user)
+                        @foreach($users->getJobs->sortDesc()->take(15) as $user)
                             <tbody>
                             @if( $user->archive == null)
                             <tr>
@@ -334,7 +334,7 @@
                         </thead>
                         @php $users = \App\Models\User::find(8) @endphp
                         <h2 style="text-align: right;font-size: 30px;font-weight: bolder">{{ $users->name }}</h2>
-                        @foreach($users->getJobs->take(15)->sortDesc() as $user)
+                        @foreach($users->getJobs->sortDesc()->take(15) as $user)
                             <tbody>
                             @if( $user->archive == null)
                             <tr>
@@ -374,7 +374,7 @@
                         </thead>
                         @php $users = \App\Models\User::find(9) @endphp
                         <h2 style="text-align: right;font-size: 30px;font-weight: bolder">{{ $users->name }}</h2>
-                        @foreach($users->getJobs->take(15)->sortDesc() as $user)
+                        @foreach($users->getJobs->sortDesc()->take(15) as $user)
                             <tbody>
                             @if( $user->archive == null)
                             <tr>
@@ -414,7 +414,7 @@
                         </thead>
                         @php $users = \App\Models\User::findOrFail(10) @endphp
                         <h2 style="text-align: right;font-size: 30px;font-weight: bolder">{{ $users->name }}</h2>
-                        @foreach($users->getJobs->take(15)->sortDesc() as $user)
+                        @foreach($users->getJobs->sortDesc()->take(15) as $user)
                             <tbody>
                             @if( $user->archive == null)
                             <tr>
@@ -458,7 +458,7 @@
                             </thead>
                             @php $users = \App\Models\User::find(11) @endphp
                             <h2 style="text-align: right;font-size: 30px;font-weight: bolder">{{ $users->name }}</h2>
-                            @foreach($users->getJobs->take(15)->sortDesc() as $user)
+                            @foreach($users->getJobs->sortDesc()->take(15) as $user)
                                 <tbody>
                                 @if( $user->archive == null)
                                 <tr>
@@ -498,7 +498,7 @@
                             </thead>
                             @php $users = \App\Models\User::find(12) @endphp
                             <h2 style="text-align: right;font-size: 30px;font-weight: bolder">{{ $users->name }}</h2>
-                            @foreach($users->getJobs->take(15)->sortDesc() as $user)
+                            @foreach($users->getJobs->sortDesc()->take(15) as $user)
                                 <tbody>
                                 @if( $user->archive == null)
                                 <tr>
