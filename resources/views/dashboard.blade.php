@@ -44,8 +44,14 @@
                                 @php $falastlogin = verta($lastlogin) @endphp
                             <td style="direction: ltr">{{ $falastlogin }}
                                 @php $difdays = \Carbon\Carbon::now()->diffInDays($lastlogin) @endphp
-                                @if( $difdays >= 3 )
+                                @if( $difdays < 3 )
+
+                                @elseif( $difdays >= 3 )
                                     🍰
+                                @elseif ($difdays >= 4)
+                                    🍦
+                                @else
+                                    🎂
                                 @endif
                             </td>
                             <td style="direction: ltr">{{ \App\Models\User::findOrFail(4)->name }}</td>
@@ -53,8 +59,14 @@
                             @php $falastlogin = verta($lastlogin) @endphp
                             <td style="direction: ltr">{{ $falastlogin }}
                                 @php $difdays = \Carbon\Carbon::now()->diffInDays($lastlogin) @endphp
-                                @if( $difdays >= 3 )
+                                @if( $difdays < 3 )
+
+                                @elseif( $difdays >= 3 )
                                     🍰
+                                @elseif ($difdays >= 4)
+                                    🍦
+                                @else
+                                    🎂
                                 @endif
                             </td>
                         </tr>
@@ -64,8 +76,14 @@
                             @php $falastlogin = verta($lastlogin) @endphp
                             <td style="direction: ltr">{{ $falastlogin }}
                                 @php $difdays = \Carbon\Carbon::now()->diffInDays($lastlogin) @endphp
-                                @if( $difdays >= 3 )
+                                @if( $difdays < 3 )
+
+                                @elseif( $difdays >= 3 )
                                     🍰
+                                @elseif ($difdays >= 4)
+                                    🍦
+                                @else
+                                    🎂
                                 @endif
                             </td>
                             <td style="direction: ltr">{{ \App\Models\User::findOrFail(6)->name }}</td>
@@ -73,8 +91,14 @@
                             @php $falastlogin = verta($lastlogin) @endphp
                             <td style="direction: ltr">{{ $falastlogin }}
                                 @php $difdays = \Carbon\Carbon::now()->diffInDays($lastlogin) @endphp
-                                @if( $difdays >= 3 )
+                                @if( $difdays < 3 )
+
+                                @elseif( $difdays >= 3 )
                                     🍰
+                                @elseif ($difdays >= 4)
+                                    🍦
+                                @else
+                                    🎂
                                 @endif
                             </td>
                         </tr>
@@ -84,8 +108,14 @@
                             @php $falastlogin = verta($lastlogin) @endphp
                             <td style="direction: ltr">{{ $falastlogin }}
                                 @php $difdays = \Carbon\Carbon::now()->diffInDays($lastlogin) @endphp
-                                @if( $difdays >= 3 )
+                                @if( $difdays < 3 )
+
+                                @elseif( $difdays >= 3 )
                                     🍰
+                                @elseif ($difdays >= 4)
+                                    🍦
+                                @else
+                                    🎂
                                 @endif
                             </td>
                             <td style="direction: ltr">{{ \App\Models\User::findOrFail(8)->name }}</td>
@@ -93,8 +123,14 @@
                             @php $falastlogin = verta($lastlogin) @endphp
                             <td style="direction: ltr">{{ $falastlogin }}
                                 @php $difdays = \Carbon\Carbon::now()->diffInDays($lastlogin) @endphp
-                                @if( $difdays >= 3 )
+                                @if( $difdays < 3 )
+
+                                @elseif( $difdays >= 3 )
                                     🍰
+                                @elseif ($difdays >= 4)
+                                    🍦
+                                @else
+                                    🎂
                                 @endif
                             </td>
                         </tr>
@@ -104,8 +140,14 @@
                             @php $falastlogin = verta($lastlogin) @endphp
                             <td style="direction: ltr">{{ $falastlogin }}
                                 @php $difdays = \Carbon\Carbon::now()->diffInDays($lastlogin) @endphp
-                                @if( $difdays >= 3 )
+                                @if( $difdays < 3 )
+
+                                @elseif( $difdays >= 3 )
                                     🍰
+                                @elseif ($difdays >= 4)
+                                    🍦
+                                @else
+                                    🎂
                                 @endif
                             </td>
                             <td style="direction: ltr">{{ \App\Models\User::findOrFail(10)->name }}</td>
@@ -113,8 +155,14 @@
                             @php $falastlogin = verta($lastlogin) @endphp
                             <td style="direction: ltr">{{ $falastlogin }}
                                 @php $difdays = \Carbon\Carbon::now()->diffInDays($lastlogin) @endphp
-                                @if( $difdays >= 3 )
+                                @if( $difdays < 3 )
+
+                                @elseif( $difdays >= 3 )
                                     🍰
+                                @elseif ($difdays >= 4)
+                                    🍦
+                                @else
+                                    🎂
                                 @endif
                             </td>
                         </tr>
