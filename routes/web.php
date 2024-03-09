@@ -30,17 +30,17 @@ Route::middleware('auth')->group(function () {
     Route::post('/submitjob', [\App\Http\Controllers\jobController::class, 'createJob']);
     Route::get('/jobform', [\App\Http\Controllers\jobController::class, 'jobForm'])->name('jobform');
 
-    Route::post('/getjobs', [\App\Http\Controllers\jobController::class, 'getJob'])->name('getjob');
+    Route::get('/getjobs', [\App\Http\Controllers\jobController::class, 'getJob'])->name('getjob');
     Route::get('/selectuser', [\App\Http\Controllers\jobController::class, 'selectUser'])->name('selectuser');
 
     Route::get('/managerjobs', [\App\Http\Controllers\jobController::class, 'getAllJobs']);
-    Route::post('/delete/{id}', [\App\Http\Controllers\jobController::class, 'deleteJob']);
-    Route::post('/update/{id}', [\App\Http\Controllers\jobController::class, 'updateJob']);
-    Route::post('/edit-task/{id}', [\App\Http\Controllers\jobController::class, 'editJob']);
-    Route::post('/edit/{id}', [\App\Http\Controllers\jobController::class, 'submitEditJob']);
+    Route::get('/delete/{id}', [\App\Http\Controllers\jobController::class, 'deleteJob']);
+    Route::get('/update/{id}', [\App\Http\Controllers\jobController::class, 'updateJob']);
+    Route::get('/edit-task/{id}', [\App\Http\Controllers\jobController::class, 'editJob']);
+    Route::get('/edit/{id}', [\App\Http\Controllers\jobController::class, 'submitEditJob']);
     Route::get('/archive', [\App\Http\Controllers\jobController::class, 'archiveTasks'])->name('archive')->middleware('checkAdmin');
     Route::post('/unarchive/{id}', [\App\Http\Controllers\jobController::class, 'unArchive']);
-    Route::post('/force/{id}', [\App\Http\Controllers\jobController::class, 'markforce']);
+    Route::get('/force/{id}', [\App\Http\Controllers\jobController::class, 'markforce']);
     Route::get('/export', [\App\Http\Controllers\jobController::class, 'excelExport'])->name('export');
     Route::get('/diflogin', [\App\Http\Controllers\ProfileController::class, 'getDifTimeLogin'])->name('diflogin');
     });
@@ -67,7 +67,46 @@ Route::prefix('/taskgroup')->group( function (){
     Route::post('/edit/{id}', [\App\Http\Controllers\taskGroupController::class, 'editGtask'])->name('editgtask')->middleware('checkAdmin');
 });
 
+Route::get('/test' , function (){
+    $users = \App\Models\User::all();
+        foreach ($users as $user) {
+            $tasks = \App\Models\Job::where([
+                ['user_id', $user->id],
+                ['status', 2]
+            ])->get();
+            $findtasks = count($tasks);
+            $receptor = $user->phone;
+            $api_key = env('SMS_API');
+            $response = \Illuminate\Support\Facades\Http::asForm()->post("https://api.kavenegar.com/v1/$api_key/sms/send.json", [
+                    'receptor' => '09197228110',
+                    'message' => 'شما تعداد '.$findtasks.' تسک انجام نشده دارید',
+            ]);
+            return $response->body();
+        };
+});
 
+/*Route::get('/testsms', function () {
+    $api_key = env('SMS_API');
+
+    $response = \Illuminate\Support\Facades\Http::asForm()->post("https://api.kavenegar.com/v1/$api_key/sms/send.json", [
+        'receptor' => '09197228110',
+        'message' => '543543543543sasaman',
+    ]);
+
+    return $response->body();
+});*/
+
+Route::get('/testsendsmstask', function (){
+    $user = '09197228110';
+    $findtasks = 5;
+    $receptor = $user;
+    $api_key = '41726265533245616A6C646E39382B7A366B635A4E447244444C64333039524530645641456D48777A454D3D';
+    $response = \Illuminate\Support\Facades\Http::asForm()->post("https://api.kavenegar.com/v1/$api_key/sms/send.json", [
+        'receptor' => '09197228110',
+        'message' => 'شما تعداد'.$findtasks.'تسک انجام نشده دارید',
+    ]);
+    return $response->body();
+});
 
 /*
 Route::get('/del', function (){
