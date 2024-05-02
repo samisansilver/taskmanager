@@ -4,21 +4,40 @@ namespace App\Http\Controllers;
 
 use App\Models\Job;
 use App\Models\User;
+use Carbon\Carbon;
 use GuzzleHttp\Promise\Create;
+use Hekmatinasser\Verta\Verta;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Date;
 use Rap2hpoutre\FastExcel\FastExcel;
 
 class jobController extends Controller
 {
     public function createJob(Request $request)
     {
+        $exploderequest = explode(' ', $request->due_time);
+        $explodedate = explode('-', $exploderequest[0]);
+            $year = $explodedate[0];
+            $month = $explodedate[1];
+            $day = $explodedate[2];
+        $explodetime = explode(':', $exploderequest[1]);
+            $hour = $explodetime[0];
+            $minute = $explodetime[1];
+            $second = $explodetime[2];
+        $explodepart = $exploderequest[2];
+        $converttogeorgian = Verta::jalaliToGregorian($year, $month, $day);
+            $geoyear = $converttogeorgian[0];
+            $geomonth = $converttogeorgian[1];
+            $geoday = $converttogeorgian[2];
+        $georgiandate = Carbon::create($geoyear, $geomonth, $geoday, $hour, $minute, $day, 'Asia/Tehran');
         $newJob = Job::create([
            'title' => $request->title,
            'description' => $request->description,
             'status' => 1,
             'user_id' => $request->user,
-            'process' => 0
+            'process' => 0,
+            'due_time' => $georgiandate
         ]);
         return redirect('/selectuser');
     }
@@ -51,7 +70,7 @@ class jobController extends Controller
         $archivejob->update([
             'archive' => 1
         ]);
-        return redirect('/selectuser');
+        return redirect()->back();
     }
     public function updateJob(Request $request, $id)
     {
@@ -60,7 +79,7 @@ class jobController extends Controller
             'status' => 2,
             'process' => 100,
         ]);
-        return redirect('/selectuser');
+        return redirect()->back();
     }
 
     public function editJob(Request $request, $id)
@@ -95,7 +114,7 @@ class jobController extends Controller
         $upjob->update([
             'archive' => null
         ]);
-        return redirect('/selectuser');
+        return redirect()->back();
     }
 
     public function markForce(Request $request, $id)
@@ -110,7 +129,7 @@ class jobController extends Controller
                 'force' => 0
             ]);
         }
-        return redirect('/selectuser');
+        return redirect()->back();
     }
 
     public function excelExport()

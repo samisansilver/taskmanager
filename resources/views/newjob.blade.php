@@ -24,6 +24,7 @@
                                     <option type="text" name="user" value="{{ $user->id }}">{{ $user->name }}</option>
                                 @endforeach
                             </select>
+                            <input class="format-example" name="due_time"/>
                         @endif
                         <button>ارسال</button>
                     </form>
@@ -32,3 +33,100 @@
         </div>
     </div>
 </x-app-layout>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script type="text/javascript" src="https://unpkg.com/persian-date@latest/dist/persian-date.js"></script>
+<script type="text/javascript" src="https://unpkg.com/persian-datepicker@latest/dist/js/persian-datepicker.js"></script>
+    <script type="text/javascript">
+            $('.format-example').persianDatepicker({
+                "inline": false,
+                "format": "",
+                "viewMode": "day",
+                "initialValue": true,
+                "autoClose": true,
+                "position": "auto",
+                "altFormat": "",
+                "altField": "#altfieldExample",
+                "onlyTimePicker": false,
+                "onlySelectOnDate": false,
+                "calendarType": "persian",
+                "inputDelay": 800,
+                "observer": false,
+                "calendar": {
+                    "persian": {
+                        "locale": "en",
+                        "showHint": true,
+                        "leapYearMode": "algorithmic"
+                    },
+                    "gregorian": {
+                        "locale": "en",
+                        "showHint": true
+                    }
+                },
+                "navigator": {
+                    "enabled": true,
+                    "scroll": {
+                        "enabled": true
+                    },
+                    "text": {
+                        "btnNextText": "<",
+                        "btnPrevText": ">"
+                    }
+                },
+                "toolbox": {
+                    "enabled": true,
+                    "calendarSwitch": {
+                        "enabled": true,
+                        "format": "MMMM"
+                    },
+                    "todayButton": {
+                        "enabled": true,
+                        "text": {
+                            "fa": "امروز",
+                            "en": "Today"
+                        }
+                    },
+                    "submitButton": {
+                        "enabled": true,
+                        "text": {
+                            "fa": "تایید",
+                            "en": "Submit"
+                        }
+                    },
+                    "text": {
+                        "btnToday": "امروز"
+                    }
+                },
+                "timePicker": {
+                    "enabled": true,
+                    "step": 1,
+                    "hour": {
+                        "enabled": true,
+                        "step": null
+                    },
+                    "minute": {
+                        "enabled": true,
+                        "step": null
+                    },
+                    "second": {
+                        "enabled": true,
+                        "step": null
+                    },
+                    "meridian": {
+                        "enabled": true
+                    }
+                },
+                "dayPicker": {
+                    "enabled": true,
+                    "titleFormat": "YYYY MMMM"
+                },
+                "monthPicker": {
+                    "enabled": true,
+                    "titleFormat": "YYYY"
+                },
+                "yearPicker": {
+                    "enabled": true,
+                    "titleFormat": "YYYY"
+                },
+                "responsive": false
+            });
+    </script>

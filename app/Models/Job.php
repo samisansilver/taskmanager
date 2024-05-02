@@ -16,7 +16,8 @@ class Job extends Model
         'user_id',
         'process',
         'archive',
-        'force'
+        'force',
+        'due_time'
     ];
 
     public function getUser()

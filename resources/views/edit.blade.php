@@ -8,8 +8,8 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900" style="direction: rtl">
-                <form action="/edit/{{ $id }}" method="post" style="padding:40px;margin:40px">
-                    @csrf
+                <form action="/edit/{{ $id }}" method="get" style="padding:40px;margin:40px">
+                    <!-- @ csrf -->
                     <label>توضیحات</label>
                     <label>
                         <input style="width: 100%; border: 1px solid black; height: 200px;" type="textarea" name="description" value="{{ $ourjob->description }}">

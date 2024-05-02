@@ -15,6 +15,7 @@
                             <th>id</th>
                             <th>title</th>
                             <th>description</th>
+                            <th>date</th>
                             <th></th>
                             <th></th>
                             <th></th>
@@ -25,7 +26,7 @@
                             @if( $getuserjob->archive == null)
                             <tr>
                                 <td style="width: 10%">
-                                    <form action="/force/{{ $getuserjob->id }}" method="post">
+                                    <form action="/force/{{ $getuserjob->id }}" method="get">
                                         @if($getuserjob->force == 0)
                                             <input name="force" value="1" hidden="">
                                         @else
@@ -48,6 +49,11 @@
                                     <td style="color: green; direction:rtl">{{ $getuserjob->title }}</td>
                                 @endif
                                 <td style="direction:rtl">{{ $getuserjob->description }}</td>
+                                @php
+                                    $date = $getuserjob->created_at;
+                                    $fadate = verta($date);
+                                @endphp
+                                <td style="direction:ltr">{{ $fadate }}</td>
                                 <td style="direction:ltr">
                                     @if( $getuserjob->process <= 10 )
                                         <p style="width: 5%; height: 35px ; background: red; color: white; font-size: 12px; vertical-align: middle; padding-top: 5%">0%</p>
@@ -63,20 +69,20 @@
                                 </td>
                                 <td>
                                     @if(\Illuminate\Support\Facades\Auth::user()->user_role == 1 )
-                                    <form action="/delete/{{ $getuserjob->id }}" method="post">
+                                    <form action="/delete/{{ $getuserjob->id }}" method="get">
                                         @csrf
                                         <button style="color: red; font-weight: bolder" type="submit">Delete</button>
                                     </form>
                                 </td>
                                    @endif
                                 <td>
-                                    <form action="/update/{{ $getuserjob->id }}" method="post">
+                                    <form action="/update/{{ $getuserjob->id }}" method="get">
                                         @csrf
                                         <button style="color: darkgreen; font-weight: bolder" type="submit">Done</button>
                                     </form>
                                 </td>
                                 <td>
-                                    <form action="/edit-task/{{ $getuserjob->id }}" method="post">
+                                    <form action="/edit-task/{{ $getuserjob->id }}" method="get">
                                         @csrf
                                         <button style="color: darkorange; font-weight: bolder" type="submit">Edit</button>
                                     </form>

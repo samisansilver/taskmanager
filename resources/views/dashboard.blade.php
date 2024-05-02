@@ -2,7 +2,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>ایلیااستیل - تسک منیجر</title>
+    <title>Laravel</title>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
@@ -598,6 +598,7 @@
                                 <th>عنوان</th>
                                 <th>کاربر</th>
                                 <th>ردیف</th>
+                                <th>وضعیت</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -612,6 +613,33 @@
                                     @endif
                                         <td>{{ $job->getUser->name }}</td>
                                     <td>{{ $job->id }}</td>
+                                        @php $create_task = $job->created_at @endphp
+                                        @php $update_task = $job->updated_at @endphp
+                                        @php $taskdays = \Carbon\Carbon::create($create_task)->diffInDays($update_task) @endphp
+                                    <td>
+                                        @if($taskdays <= 7 && $job->status == 1)
+                                            ❓
+                                        @elseif($taskdays > 7 && $job->status == 1)
+                                            🌶
+                                        @else()
+                                            ✅
+                                        @endif
+                                    </td>
+                                        {{--@if($job->status == 1)
+
+                                    <td>
+                                        @if($taskdays >= 7)
+                                            🌶
+                                        @elseif($taskdays >= 7 && $taskdays < 14)
+                                            🌶🌶
+                                        @elseif($taskdays >= 14 && $taskdays < 21)
+                                            🌶🌶🌶
+                                        @else
+                                            🌶🌶🌶🌶
+                                        @endif
+                                    </td>
+                                @else
+                                    <td></td>--}}
                                 </tr>
                                     @endforeach
                             </tbody>
