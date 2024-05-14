@@ -629,7 +629,7 @@
                                         @elseif($taskdays > 0)
                                             ⛔
                                         @elseif($taskdays <= 0)
-
+                                            🧿
                                         @endif
                                     </td>
                                         {{--@if($job->status == 1)
