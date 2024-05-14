@@ -108,6 +108,18 @@ Route::get('/testsendsmstask', function (){
     return $response->body();
 });
 
+Route::get('/createduetime', function (){
+    $updatetask = \App\Models\Job::all();
+    foreach ($updatetask as $item) {
+        $item->update([
+            'due_time' => \Carbon\Carbon::now()
+        ]);
+    }
+
+    return 'ok';
+
+});
+
 /*
 Route::get('/del', function (){
       $gettasks = \App\Models\Job::where('process', 0)->get();
@@ -118,5 +130,9 @@ Route::get('/del', function (){
       }
 });*/
 
+/*Route::get('/score' , function (){
+    $score = \Illuminate\Support\Facades\Http::get('https://livescore-api.com/api-client/matches/live.json?key=C5GnQQFxDPS7WFKM&secret=RmYyFQ8UvTDp8EuKKa7A0M7DCZLyFwlw');
+    return $score;
+});*/
 
 require __DIR__.'/auth.php';

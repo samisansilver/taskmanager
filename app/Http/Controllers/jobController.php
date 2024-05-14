@@ -30,7 +30,7 @@ class jobController extends Controller
             $geoyear = $converttogeorgian[0];
             $geomonth = $converttogeorgian[1];
             $geoday = $converttogeorgian[2];
-        $georgiandate = Carbon::create($geoyear, $geomonth, $geoday, $hour, $minute, $day, 'Asia/Tehran');
+        $georgiandate = Carbon::create($geoyear, $geomonth, $geoday, $hour, $minute, $day, 'UTC');
         $newJob = Job::create([
            'title' => $request->title,
            'description' => $request->description,
