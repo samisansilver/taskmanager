@@ -24,8 +24,8 @@
                                     <option type="text" name="user" value="{{ $user->id }}">{{ $user->name }}</option>
                                 @endforeach
                             </select>
-                            <input class="format-example" name="due_time"/>
                         @endif
+                        <input class="format-example" name="due_time"/>
                         <button>ارسال</button>
                     </form>
                 </div>
