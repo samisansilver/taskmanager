@@ -612,7 +612,7 @@
                                     @else
                                         <td style="color: green">{{ $job->title }}</td>
                                     @endif
-                                        <td>{{ $job->getUser->name }}</td>
+                                    <td>{{ $job->getUser->name }}</td>
                                     <td>{{ $job->id }}</td>
                                         @php
                                             $date = $job->due_time;
@@ -671,6 +671,8 @@
                                 <th>عنوان</th>
                                 <th>کاربر</th>
                                 <th>ردیف</th>
+                                <th>مهلت انجام</th>
+                                <th>وضعیت</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -688,6 +690,24 @@
                                     @endif
                                     <td>{{ $job->getUser->name }}</td>
                                     <td>{{ $job->id }}</td>
+                                    @php
+                                        $date = $job->due_time;
+                                        $fadate = verta($date);
+                                    @endphp
+                                    <td style="direction: ltr">{{ $fadate }}</td>
+                                    @php $create_task = $job->created_at @endphp
+                                    @php $due_time = $job->due_time @endphp
+                                    @php $now = \Carbon\Carbon::now() @endphp
+                                    @php $taskdays = \Carbon\Carbon::create($due_time)->diffInHours($now , false) @endphp
+                                    <td>
+                                        @if($job->status == 2)
+                                            ✅
+                                        @elseif($taskdays > 0)
+                                            ⛔
+                                        @elseif($taskdays <= 0)
+                                            🧿
+                                        @endif
+                                    </td>
                             </tr>
                             @endforeach
                             </tbody>
