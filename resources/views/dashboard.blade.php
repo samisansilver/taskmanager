@@ -535,46 +535,46 @@
                                 </tbody>
                         </table>
                     </div>
-                    <div class="p-6 col">
-                        <table class="" style="width: 100%; text-align: right">
-                            <thead>
-                            <tr>
-                                <th>درصد پیشرفت</th>
-                                <th>عنوان</th>
-                                <th>ردیف</th>
-                            </tr>
-                            </thead>
-                            @php $users = \App\Models\User::find(12) @endphp
-                            <h2 style="text-align: right;font-size: 30px;font-weight: bolder">{{ $users->name }}</h2>
-                            @foreach($users->getJobs->sortDesc()->take(15) as $user)
-                                <tbody>
-                                @if( $user->archive == null)
-                                <tr>
-                                    <td style="width: 50%">
-                                        @if( $user->process <= 10 )
-                                            <p style="width: 5%; height: 35px ; background: red; color: white; font-size: 12px; vertical-align: middle; padding-top: 5%">0%</p>
-                                        @elseif( $user->process <= 30 )
-                                            <p style="width: {{ $user->process }}%; height: 35px ; background: orangered; color: black; font-size: 12px; vertical-align: middle; padding-top: 5%">{{ $user->process }}%</p>
-                                        @elseif( $user->process <= 50 )
-                                            <p style="width: {{ $user->process }}%; height: 35px ; background: yellow; color: black; font-size: 12px; vertical-align: middle; padding-top: 5%">{{ $user->process }}%</p>
-                                        @elseif( $user->process <= 80 )
-                                            <p style="width: {{ $user->process }}%; height: 35px ; background: greenyellow; color: black; font-size: 12px; vertical-align: middle; padding-top: 5%">{{ $user->process }}%</p>
-                                        @else
-                                            <p style="width: {{ $user->process }}%; height: 35px ; background: green; color: white; font-size: 12px; vertical-align: middle; padding-top: 5%">{{ $user->process }}%</p>
-                                        @endif
-                                    </td>
-                                @if($user->status == 1)
-                                    <td style="color: red">{{ $user->title }}</td>
-                                @else
-                                    <td style="color: green">{{ $user->title }}</td>
-                                @endif
-                                <td>{{ $user->id }}</td>
-                                </tr>
-                                @endif
-                                @endforeach
-                                </tbody>
-                        </table>
-                    </div>
+{{--                    <div class="p-6 col">--}}
+{{--                        <table class="" style="width: 100%; text-align: right">--}}
+{{--                            <thead>--}}
+{{--                            <tr>--}}
+{{--                                <th>درصد پیشرفت</th>--}}
+{{--                                <th>عنوان</th>--}}
+{{--                                <th>ردیف</th>--}}
+{{--                            </tr>--}}
+{{--                            </thead>--}}
+{{--                            @php $users = \App\Models\User::find(12) @endphp--}}
+{{--                            <h2 style="text-align: right;font-size: 30px;font-weight: bolder">{{ $users->name }}</h2>--}}
+{{--                            @foreach($users->getJobs->sortDesc()->take(15) as $user)--}}
+{{--                                <tbody>--}}
+{{--                                @if( $user->archive == null)--}}
+{{--                                <tr>--}}
+{{--                                    <td style="width: 50%">--}}
+{{--                                        @if( $user->process <= 10 )--}}
+{{--                                            <p style="width: 5%; height: 35px ; background: red; color: white; font-size: 12px; vertical-align: middle; padding-top: 5%">0%</p>--}}
+{{--                                        @elseif( $user->process <= 30 )--}}
+{{--                                            <p style="width: {{ $user->process }}%; height: 35px ; background: orangered; color: black; font-size: 12px; vertical-align: middle; padding-top: 5%">{{ $user->process }}%</p>--}}
+{{--                                        @elseif( $user->process <= 50 )--}}
+{{--                                            <p style="width: {{ $user->process }}%; height: 35px ; background: yellow; color: black; font-size: 12px; vertical-align: middle; padding-top: 5%">{{ $user->process }}%</p>--}}
+{{--                                        @elseif( $user->process <= 80 )--}}
+{{--                                            <p style="width: {{ $user->process }}%; height: 35px ; background: greenyellow; color: black; font-size: 12px; vertical-align: middle; padding-top: 5%">{{ $user->process }}%</p>--}}
+{{--                                        @else--}}
+{{--                                            <p style="width: {{ $user->process }}%; height: 35px ; background: green; color: white; font-size: 12px; vertical-align: middle; padding-top: 5%">{{ $user->process }}%</p>--}}
+{{--                                        @endif--}}
+{{--                                    </td>--}}
+{{--                                @if($user->status == 1)--}}
+{{--                                    <td style="color: red">{{ $user->title }}</td>--}}
+{{--                                @else--}}
+{{--                                    <td style="color: green">{{ $user->title }}</td>--}}
+{{--                                @endif--}}
+{{--                                <td>{{ $user->id }}</td>--}}
+{{--                                </tr>--}}
+{{--                                @endif--}}
+{{--                                @endforeach--}}
+{{--                                </tbody>--}}
+{{--                        </table>--}}
+{{--                    </div>--}}
                     <div class="col p-6">
 
                     </div>
