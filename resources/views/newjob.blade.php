@@ -25,6 +25,7 @@
                                 @endforeach
                             </select>
                         @endif
+                        <label>مهلت انجام</label>
                         <input class="format-example" name="due_time"/>
                         <button>ارسال</button>
                     </form>
