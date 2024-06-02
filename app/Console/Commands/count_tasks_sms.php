@@ -30,7 +30,8 @@ class count_tasks_sms extends Command
             foreach ($users as $user) {
                 $tasks = \App\Models\Job::where([
                     ['user_id', $user->id],
-                    ['status', 2]
+                    ['status', 2],
+                    ['archive', 0]
                 ])->get();
                 $findtasks = count($tasks);
                 $receptor = $user->phone;
