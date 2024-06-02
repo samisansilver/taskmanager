@@ -40,7 +40,7 @@ class count_tasks_sms extends Command
                     'message' => 'شما تعداد '.$findtasks.' تسک انجام نشده دارید',
                 ]);
 //                return $response->body();
-                Log::info($findtasks.''.$receptor);
             };
+            Log::info($findtasks.''.$receptor);
     }
 }
