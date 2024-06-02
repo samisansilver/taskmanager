@@ -12,7 +12,7 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule): void
     {
-        $schedule->command('app:count_tasks_sms')->everyMinute();
+        $schedule->command('app:count_tasks_sms')->dailyAt('16:30');
     }
 
     /**
