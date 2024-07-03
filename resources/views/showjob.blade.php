@@ -76,6 +76,13 @@
                                 </td>
                                    @endif
                                 <td>
+                                    @if(\Illuminate\Support\Facades\Auth::user()->user_role == 1 )
+                                    <form action="/reminder/{{ $getuserjob->id }}" method="get">
+                                        <button style="color: skyblue; font-weight: bolder" type="submit">Remind</button>
+                                    </form>
+                                </td>
+                                   @endif
+                                <td>
                                     <form action="/update/{{ $getuserjob->id }}" method="get">
                                         @csrf
                                         <button style="color: darkgreen; font-weight: bolder" type="submit">Done</button>

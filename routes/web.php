@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Mail\MyTestEmail;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,6 +36,7 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/managerjobs', [\App\Http\Controllers\jobController::class, 'getAllJobs']);
     Route::get('/delete/{id}', [\App\Http\Controllers\jobController::class, 'deleteJob']);
+    Route::get('/reminder/{id}', [\App\Http\Controllers\jobController::class, 'reminder']);
     Route::get('/update/{id}', [\App\Http\Controllers\jobController::class, 'updateJob']);
     Route::get('/edit-task/{id}', [\App\Http\Controllers\jobController::class, 'editJob']);
     Route::get('/edit/{id}', [\App\Http\Controllers\jobController::class, 'submitEditJob']);
@@ -118,6 +120,20 @@ Route::get('/createduetime', function (){
 
     return 'ok';
 
+});
+
+Route::get('testmail', function (){
+    \Illuminate\Support\Facades\Mail::to('sami.sansilver10@gmail.com')->send(new MyTestEmail('sami.sansilver10@gmail.com'));
+});
+
+Route::get('reminder', function (){
+    $job = \App\Models\Job::findOrFail(100);
+    $title = $job->title;
+    $api_key = env('SMS_API');
+    $response = \Illuminate\Support\Facades\Http::asForm()->post("https://api.kavenegar.com/v1/$api_key/sms/send.json", [
+        'receptor' => '09197228110',
+        'message' => 'یک یادآوری برای تسک '.$title.' دارید',
+    ]);
 });
 
 /*

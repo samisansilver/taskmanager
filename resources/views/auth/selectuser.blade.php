@@ -15,7 +15,9 @@
                         @else
                             <select name="users" id="users">
                                 @foreach($users as $user)
+                                    @if($user->disable == 0)
                                     <option value="{{ $user->id }}">{{ $user->name }}</option>
+                                    @endif
                                 @endforeach
                             </select>
                         @endif

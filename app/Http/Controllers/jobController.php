@@ -39,6 +39,14 @@ class jobController extends Controller
             'process' => 0,
             'due_time' => $georgiandate
         ]);
+        $user = \App\Models\User::findOrFail($request->user);
+            $receptor = $user->phone;
+            $name = $user->name;
+            $api_key = env('SMS_API');
+        $response = \Illuminate\Support\Facades\Http::asForm()->post("https://api.kavenegar.com/v1/$api_key/sms/send.json", [
+            'receptor' => $receptor,
+            'message' =>' سلام، '.$name.' عزیز ، شما 1 تسک جدید با عنوان "' .$request->title.'" دارید.'
+        ]);
         return redirect('/selectuser');
     }
 
@@ -141,6 +149,20 @@ class jobController extends Controller
             $getjobs  = Job::all();
         }
         return (new FastExcel($getjobs))->download('TasksList.xlsx');
+    }
+    
+    public function reminder(Request $request, $id)
+    {
+        $job = Job::findOrFail($id);
+        $title = $job->title;
+        $user = $job->getUser;
+        $usernumber = $user->phone;
+        $api_key = env('SMS_API');
+        $response = \Illuminate\Support\Facades\Http::asForm()->post("https://api.kavenegar.com/v1/$api_key/sms/send.json", [
+            'receptor' => $usernumber,
+            'message' => 'شما یک یادآوری برای تسک "'.$title.'" دارید',
+        ]);
+        return redirect()->back();
     }
 
 }

@@ -28,149 +28,89 @@
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 container">
             <div class="row align-items-start bg-white overflow-hidden shadow-sm sm:rounded-lg">
+                <div class="alert alert-warning" role="alert" dir="rtl">
+                        لطفاً شماره تلفن خود را برای دریافت اعلانات در بخش <a class="alert-link" href="/profile">پروفایل</a> وارد کنید!
+                </div>
                 <table style="direction: ltr; text-align: center">
                     <thead>
                         <tr>
                             <th>Name</th>
                             <th>Last login</th>
-                            <th>name</th>
-                            <th>Last login</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td style="direction: ltr">{{ \App\Models\User::findOrFail(1)->name }}</td>
-                                @php $lastlogin = \App\Models\User::findOrFail(1)->last_login @endphp
-                                @php $falastlogin = verta($lastlogin) @endphp
-                            <td style="direction: ltr">{{ $falastlogin }}
-                                @php $difdays = \Carbon\Carbon::now()->diffInDays($lastlogin) @endphp
-                                @if( $difdays < 3 )
+                            @php $users = \App\Models\User::all() @endphp
+                            @foreach($users as $user)
+                                @if($user->disable == 0)
+                                    <tr>
+                                        <td>{{ $user->name }}</td>
+                                    @php $lastlogin = $user->last_login @endphp
+                                    @php $falastlogin = verta($lastlogin) @endphp
+                                    <td style="direction: ltr">{{ $falastlogin }}
+                                        @php $difdays = \Carbon\Carbon::now()->diffInDays($lastlogin) @endphp
+                                        @if( $difdays < 3 )
 
-                                @elseif( $difdays >= 3 && $difdays < 4 )
-                                    🍰
-                                @elseif ($difdays >= 4 && $difdays < 5)
-                                    🍦
-                                @else
-                                    🎂
+                                        @elseif( $difdays >= 3 && $difdays < 4 )
+                                            🍰
+                                        @elseif ($difdays >= 4 && $difdays < 5)
+                                            🍦
+                                        @else
+                                            🎂
+                                        @endif
+                                    </td>
+                                    </tr>
                                 @endif
-                            </td>
-                            <td style="direction: ltr">{{ \App\Models\User::findOrFail(4)->name }}</td>
-                            @php $lastlogin = \App\Models\User::findOrFail(4)->last_login @endphp
-                            @php $falastlogin = verta($lastlogin) @endphp
-                            <td style="direction: ltr">{{ $falastlogin }}
-                                @php $difdays = \Carbon\Carbon::now()->diffInDays($lastlogin) @endphp
-                                @if( $difdays < 3 )
-
-                                @elseif( $difdays >= 3 && $difdays < 4 )
-                                    🍰
-                                @elseif ($difdays >= 4 && $difdays < 5)
-                                    🍦
-                                @else
-                                    🎂
-                                @endif
-                            </td>
-                        </tr>
-                        <tr>
-                            <td style="direction: ltr">{{ \App\Models\User::findOrFail(5)->name }}</td>
-                            @php $lastlogin = \App\Models\User::findOrFail(5)->last_login @endphp
-                            @php $falastlogin = verta($lastlogin) @endphp
-                            <td style="direction: ltr">{{ $falastlogin }}
-                                @php $difdays = \Carbon\Carbon::now()->diffInDays($lastlogin) @endphp
-                                @if( $difdays < 3 )
-
-                                @elseif( $difdays >= 3 && $difdays < 4 )
-                                    🍰
-                                @elseif ($difdays >= 4 && $difdays < 5)
-                                    🍦
-                                @else
-                                    🎂
-                                @endif
-                            </td>
-                            <td style="direction: ltr">{{ \App\Models\User::findOrFail(6)->name }}</td>
-                            @php $lastlogin = \App\Models\User::findOrFail(6)->last_login @endphp
-                            @php $falastlogin = verta($lastlogin) @endphp
-                            <td style="direction: ltr">{{ $falastlogin }}
-                                @php $difdays = \Carbon\Carbon::now()->diffInDays($lastlogin) @endphp
-                                @if( $difdays < 3 )
-
-                                @elseif( $difdays >= 3 && $difdays < 4 )
-                                    🍰
-                                @elseif ($difdays >= 4 && $difdays < 5)
-                                    🍦
-                                @else
-                                    🎂
-                                @endif
-                            </td>
-                        </tr>
-                        <tr>
-                            <td style="direction: ltr">{{ \App\Models\User::findOrFail(7)->name }}</td>
-                            @php $lastlogin = \App\Models\User::findOrFail(7)->last_login @endphp
-                            @php $falastlogin = verta($lastlogin) @endphp
-                            <td style="direction: ltr">{{ $falastlogin }}
-                                @php $difdays = \Carbon\Carbon::now()->diffInDays($lastlogin) @endphp
-                                @if( $difdays < 3 )
-
-                                @elseif( $difdays >= 3 && $difdays < 4 )
-                                    🍰
-                                @elseif ($difdays >= 4 && $difdays < 5)
-                                    🍦
-                                @else
-                                    🎂
-                                @endif
-                            </td>
-                            <td style="direction: ltr">{{ \App\Models\User::findOrFail(8)->name }}</td>
-                            @php $lastlogin = \App\Models\User::findOrFail(8)->last_login @endphp
-                            @php $falastlogin = verta($lastlogin) @endphp
-                            <td style="direction: ltr">{{ $falastlogin }}
-                                @php $difdays = \Carbon\Carbon::now()->diffInDays($lastlogin) @endphp
-                                @if( $difdays < 3 )
-
-                                @elseif( $difdays >= 3 && $difdays < 4 )
-                                    🍰
-                                @elseif ($difdays >= 4 && $difdays < 5)
-                                    🍦
-                                @else
-                                    🎂
-                                @endif
-                            </td>
-                        </tr>
-                        <tr>
-                            <td style="direction: ltr">{{ \App\Models\User::findOrFail(9)->name }}</td>
-                            @php $lastlogin = \App\Models\User::findOrFail(9)->last_login @endphp
-                            @php $falastlogin = verta($lastlogin) @endphp
-                            <td style="direction: ltr">{{ $falastlogin }}
-                                @php $difdays = \Carbon\Carbon::now()->diffInDays($lastlogin) @endphp
-                                @if( $difdays < 3 )
-
-                                @elseif( $difdays >= 3 && $difdays < 4 )
-                                    🍰
-                                @elseif ($difdays >= 4 && $difdays < 5)
-                                    🍦
-                                @else
-                                    🎂
-                                @endif
-                            </td>
-                            <td style="direction: ltr">{{ \App\Models\User::findOrFail(10)->name }}</td>
-                            @php $lastlogin = \App\Models\User::findOrFail(10)->last_login @endphp
-                            @php $falastlogin = verta($lastlogin) @endphp
-                            <td style="direction: ltr">{{ $falastlogin }}
-                                @php $difdays = \Carbon\Carbon::now()->diffInDays($lastlogin) @endphp
-                                @if( $difdays < 3 )
-
-                                @elseif( $difdays >= 3 && $difdays < 4 )
-                                    🍰
-                                @elseif ($difdays >= 4 && $difdays < 5)
-                                    🍦
-                                @else
-                                    🎂
-                                @endif
-                            </td>
-                        </tr>
+                            @endforeach
                     </tbody>
                 </table>
-                @if(\Illuminate\Support\Facades\Auth::user()->user_role == 1)
-                <div class="col p-6">
-                    <table class="" style="width: 100%; text-align: right">
+
+
+
+
+
+            @if(\Illuminate\Support\Facades\Auth::user()->user_role == 1)
+                    <table>
+                        <thead>
+                        <tr>{{--
+                            <td>1</td>
+                            <td>2</td>
+                            <td>3</td>--}}
+                        </tr>
+                        </thead>
+                        <tbody>
+
+                        @php $users = \App\Models\User::all() @endphp
+                        {{--                    @foreach($users->getJobs->sortDesc()->take(15) as $user)--}}
+                        {{--                        @php $task = $user->getJobs @endphp--}}
+                        @foreach($users as $user)
+                            @if($user->disable == 0)
+
+                                <tr class="m-3">
+                                    <td style="width: 10%">{{ $user->name }}</td>
+                                    @php $task = $user->getJobs @endphp
+                                    @foreach($task->sortDesc()->take(5) as $onetask)
+                                        <td style="width: 10%">
+                                            @if( $onetask->process <= 10 )
+                                                <p style="width: 5%; height: 35px ; background: red; color: white; font-size: 12px; vertical-align: middle; padding-top: 5%">0%</p>
+                                            @elseif( $onetask->process <= 30 )
+                                                <p style="width: {{ $user->process }}%; height: 35px ; background: orangered; color: black; font-size: 12px; vertical-align: middle; padding-top: 5%">{{ $onetask->process }}%</p>
+                                            @elseif( $onetask->process <= 50 )
+                                                <p style="width: {{ $user->process }}%; height: 35px ; background: yellow; color: black; font-size: 12px; vertical-align: middle; padding-top: 5%">{{ $onetask->process }}%</p>
+                                            @elseif( $onetask->process <= 80 )
+                                                <p style="width: {{ $onetask->process }}%; height: 35px ; background: greenyellow; color: black; font-size: 12px; vertical-align: middle; padding-top: 5%">{{ $onetask->process }}%</p>
+                                            @else
+                                                <p style="width: {{ $onetask->process }}%; height: 35px ; background: green; color: white; font-size: 12px; vertical-align: middle; padding-top: 5%">{{ $onetask->process }}%</p>
+                                            @endif
+                                        </td>
+                                        <td style="width: 5%"> {{ $onetask->title }} </td>
+                                    @endforeach
+                                </tr>
+                            @endif
+                        @endforeach
+                        </tbody>
+                    </table>
+{{--                    <div class="col p-6">
+                        <table class="" style="width: 100%; text-align: right">
                         <thead>
                         <tr>
                             <th>درصد پیشرفت</th>
@@ -208,9 +148,9 @@
                             @endforeach
                             </tbody>
                     </table>
-                </div>
-                <div class="p-6 col">
-                    <table class="" style="width: 100%; text-align: right">
+                    </div>
+                    <div class="p-6 col">
+                        <table class="" style="width: 100%; text-align: right">
                         <thead>
                         <tr>
                             <th>درصد پیشرفت</th>
@@ -248,9 +188,9 @@
                             @endforeach
                             </tbody>
                     </table>
-                </div>
-                <div class="col p-6">
-                    <table class="" style="width: 100%; text-align: right">
+                    </div>
+                    <div class="col p-6">
+                        <table class="" style="width: 100%; text-align: right">
                         <thead>
                         <tr>
                             <th>درصد پیشرفت</th>
@@ -288,9 +228,9 @@
                             @endforeach
                             </tbody>
                     </table>
-                </div>
-                <div class="p-6 col">
-                    <table class="" style="width: 100%; text-align: right">
+                    </div>
+                    <div class="p-6 col">
+                        <table class="" style="width: 100%; text-align: right">
                         <thead>
                         <tr>
                             <th>درصد پیشرفت</th>
@@ -328,10 +268,10 @@
                             @endforeach
                             </tbody>
                     </table>
-                </div>
+                    </div>--}}
             </div>
             <div class="row align-items-start bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="col p-6">
+                {{--<div class="col p-6">
                     <table class="" style="width: 100%; text-align: right">
                         <thead>
                         <tr>
@@ -490,11 +430,12 @@
                             @endforeach
                             </tbody>
                     </table>
-                </div>
+                </div>--}}
             </div>
         </div>
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 container">
                 <div class="row align-items-start bg-white overflow-hidden shadow-sm sm:rounded-lg">
+{{--
                     <div class="col p-6">
                         <table class="" style="width: 100%; text-align: right">
                             <thead>
@@ -535,6 +476,7 @@
                                 </tbody>
                         </table>
                     </div>
+--}}
 {{--                    <div class="p-6 col">--}}
 {{--                        <table class="" style="width: 100%; text-align: right">--}}
 {{--                            <thead>--}}
@@ -575,12 +517,12 @@
 {{--                                </tbody>--}}
 {{--                        </table>--}}
 {{--                    </div>--}}
-                    <div class="col p-6">
+{{--                    <div class="col p-6">
 
                     </div>
                     <div class="p-6 col">
 
-                    </div>
+                    </div>--}}
                 </div>
             </div>
     </div>
